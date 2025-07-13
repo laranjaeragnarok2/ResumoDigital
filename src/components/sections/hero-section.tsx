@@ -38,7 +38,7 @@ export default function HeroSection() {
                         <Github size={24} />
                         <span className="sr-only">GitHub</span>
                     </Link>
-                    <Link href="https://linkedin.com/in/horyu" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://www.linkedin.com/in/arthur-horyu-128933363/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin size={24} />
                         <span className="sr-only">LinkedIn</span>
                     </Link>
