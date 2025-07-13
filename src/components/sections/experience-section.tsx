@@ -40,7 +40,7 @@ const experiences = [
         role: "Desenvolvedor Web",
         company: "Agência América",
         period: "2019",
-        description: "Criei e mantive sites para mais de 50 clientes de alto perfil. Fui peça-chave na implementação de protocolos de segurança digital para proteger os ativos online dos clientes.",
+        description: "Executando trabalhos em lotes, na agência America pude aprender a colaborar em equipe e buscar soluções inteligentes pra clientes de alto padrão, fui um desenvolvedor apaixonado e obtive excelentes resultados",
         tags: ["Desenvolvimento Web", "Segurança Digital", "HTML/CSS", "JavaScript"]
     },
 ];
