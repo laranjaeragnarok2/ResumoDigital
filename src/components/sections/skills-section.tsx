@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Mouse } from 'lucide-react';
 
 const skills = {
     Frontend: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js'],
@@ -19,9 +19,9 @@ const skills = {
 };
 
 const SkillCard = ({ category, items }: { category: string; items: string[] }) => (
-    <div className="w-[350px] md:w-[450px] h-full flex-shrink-0 bg-card border rounded-xl p-8 flex flex-col">
+    <div className="w-[350px] md:w-[450px] flex-shrink-0 bg-card border rounded-xl p-8 flex flex-col h-[500px]">
         <h3 className="text-xl font-bold mb-6 text-primary">{category}</h3>
-        <ul className="space-y-4 flex-1">
+        <ul className="space-y-4">
             {items.map((skill) => (
                 <li key={skill} className="flex items-center">
                     <CheckCircle className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
@@ -44,7 +44,7 @@ export default function SkillsSection() {
     return (
         <section ref={targetRef} id="habilidades" className="relative h-[300vh] bg-background">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-2xl w-full px-4 text-center z-0">
+                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full px-4 text-center z-10">
                      <h2 className="text-3xl font-bold tracking-tight mb-2 font-headline">Caixa de Ferramentas</h2>
                      <p className="text-muted-foreground">Um conjunto de habilidades multidisciplinares para transformar ideias em realidade.</p>
                 </div>
@@ -53,6 +53,10 @@ export default function SkillsSection() {
                         <SkillCard key={category} category={category} items={items} />
                     ))}
                 </motion.div>
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted-foreground animate-pulse">
+                     <Mouse className="h-8 w-8" />
+                     <span className="text-xs font-semibold tracking-widest">ARRASTE</span>
+                </div>
             </div>
         </section>
     );
