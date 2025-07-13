@@ -1,36 +1,37 @@
 
 import { summarizeReadme } from "@/ai/flows/summarize-readme-flow";
 import PortfolioPage from "@/components/portfolio-page";
+import type { Project } from "@/components/sections/portfolio-section";
 
-const techProjects = [
-    {
-        title: "Legado da Ponte de Pedra (Site and Short-film)",
-        description: "Landing page para o curta-metragem 'Legado da Ponte de Pedra', um projeto socioambiental focado na preservação do patrimônio histórico e geológico de Goiás.",
-        image: "https://placehold.co/800x600.png",
-        hint: "bridge nature",
-        link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
-        tags: ["Next.js", "TypeScript", "Vercel"],
-        className: ""
-    },
-    {
-        title: "Medusa Store (E-commerce Headless)",
-        description: "Backend de e-commerce headless usando Medusa.js, incluindo landing page e estrutura completa para produtos, pedidos e clientes.",
-        image: "https://placehold.co/600x800.png",
-        hint: "ecommerce code",
-        link: "https://github.com/laranjaeragnarok2/medusa-store",
-        tags: ["Medusa.js", "PostgreSQL", "Next.js"],
-        className: ""
-    },
-    {
-        title: "JWildfire (Generative Art)",
-        description: "Contribuição para um software multiplataforma de criação de arte generativa e fractais, unindo código e criação artística.",
-        image: "https://placehold.co/600x600.png",
-        hint: "fractal art",
-        link: "https://github.com/laranjaeragnarok2/j-wildfire-8.50",
-        tags: ["Java", "Cuda", "Arte Generativa"],
-        className: ""
-    },
-];
+// Function to fetch repositories from GitHub API
+async function getGithubProjects(username: string): Promise<Project[]> {
+    try {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=9`, {
+             next: { revalidate: 3600, tags: ['github-repos'] } 
+        });
+        if (!res.ok) {
+            console.error(`Error fetching repos for ${username}: ${res.statusText}`);
+            return [];
+        }
+        const repos = await res.json();
+        
+        // Filter out forked repos and map to the Project type
+        return repos
+            .filter((repo: any) => !repo.fork)
+            .map((repo: any) => ({
+                title: repo.name.replace(/-/g, ' ').replace(/_/g, ' '),
+                description: repo.description || 'No description provided.',
+                image: "https://placehold.co/800x600.png", // Placeholder image
+                hint: "code abstract", // Generic hint
+                link: repo.html_url,
+                tags: repo.topics || [],
+                className: "" 
+        }));
+    } catch (error) {
+        console.error("Failed to fetch GitHub projects:", error);
+        return [];
+    }
+}
 
 async function getReadmeContent(repoUrl: string): Promise<string | null> {
     try {
@@ -42,7 +43,8 @@ async function getReadmeContent(repoUrl: string): Promise<string | null> {
         
         for (const branch of mainBranches) {
             const readmeUrl = `https://raw.githubusercontent.com/${repoPath}/${branch}/README.md`;
-            const res = await fetch(readmeUrl, { next: { revalidate: 3600, tags: ['github-readme'] } }); 
+            // Revalidate READMEs less frequently
+            const res = await fetch(readmeUrl, { next: { revalidate: 86400, tags: ['github-readme'] } }); 
             
             if (res.ok) {
                 const text = await res.text();
@@ -58,13 +60,17 @@ async function getReadmeContent(repoUrl: string): Promise<string | null> {
 }
 
 export default async function Home() {
+    // Fetch projects dynamically from GitHub
+    const initialProjects = await getGithubProjects("laranjaeragnarok2");
+
     const techProjectsWithReadme = await Promise.all(
-        techProjects.map(async (project) => {
+        initialProjects.map(async (project) => {
             let finalDescription = project.description;
             const readmeContent = await getReadmeContent(project.link);
 
             if (typeof readmeContent === 'string' && readmeContent.trim().length > 0) {
                 try {
+                    // Summarize README using Genkit flow
                     finalDescription = await summarizeReadme(readmeContent);
                 } catch (error) {
                     console.error(`Failed to summarize README for ${project.link}:`, error instanceof Error ? error.message : "Unknown error");
