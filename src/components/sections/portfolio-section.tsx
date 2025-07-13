@@ -63,12 +63,20 @@ const audiovisualProjects: AudiovisualProject[] = [
         title: "Custom DarkLettering Vinil", 
         images: [
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492360556_10212567868429801_7160581523740932131_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFdeHPlAdzsYNb7RnGpjX1tXq7Co6h1F-1ersKjqHUX7YGt90Ds580qw33ai07f4fI&_nc_ohc=d2vaDxVZ7aAQ7kNvwGhcgdA&_nc_oc=AdnfaY8m9qZTYCJUlBlLtsr-hC0dDBcgjgsZ6rmBFn8B61cPQPXR8gXk2sMdHdy3zSI&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=Lm5hCc2ql9MV7iYF-Ae8aQ&oh=00_AfR6MUx-NbBoMJzELXdZWJ8nSjAMwccx6GMBlckvUIqANw&oe=68791F0B", hint: "custom lettering" }, 
-            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492516300_10212567869189820_7135244700239007909_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHqumprjG2YtEK-gGyd037n4Bv6mHKb5eXgG_qYcpvl5VKcfTeWh3WWVQwKYsAFEss&_nc_ohc=Z7WqXcyjgqgQ7kNvwGl6hUv&_nc_oc=AdkLNuwScTHFK-TsaIs-7Fi7GUYRdFZMZB91HJ8qvKrClGvw-PrZ3fr6amG8nKFzTqs&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=9LCKIQauajK7wDu9A58COw&oh=00_AfSl5Kd4ehsvtQyBNq81Gf1gJmi6tx2apNX1Pd5oWg-Ajg&oe=68791948", hint: "vinyl sticker" },
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492516300_10212567869189820_7135244700239007909_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHqumprjG2YtEK-gGyd037n4Bv6mHKb5eXgG_qYcpvl5VKcfTeWh3WWVQwKYsAFEss&_nc_ohc=Z7WqXcyjgqgQ7kNvwGl6hUv&_nc_oc=AdkLNuwScTHFK-TsaIs-7Fi7GUYRdFZMZB91HJ8qvKrClGvw-PrZ3fr6amG8nKFzTqs&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=9LCKIQQauajK7wDu9A58COw&oh=00_AfSl5Kd4ehsvtQyBNq81Gf1gJmi6tx2apNX1Pd5oWg-Ajg&oe=68791948", hint: "vinyl sticker" },
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492527251_10212567867989790_4339247791101849919_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGoanRyLz38rVveBOq5FGp5Co6YaRCNbPgKjphpEI1s-FbZHAZmpF0Pi-2bXW1ZGMU&_nc_ohc=C8nzB2DjhJcQ7kNvwEiEz0R&_nc_oc=AdlLQh_3e-zll-l_4Aw_b7fzF5Z8L4YS5O4cld38C_Sjhw2skE2qZa5EnFsDj7p9f64&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=bofnQIPgG_jbCiMkDtzTvw&oh=00_AfSVr_TsCufx_KDBBDx-OtLUN5MbviDo0UMO6vM_yWFrsw&oe=68792409", hint: "dark lettering car" }
         ], 
         span: "col-span-1" 
     },
-    { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
+    { 
+        title: "Clipe Musical - Passado", 
+        images: [
+            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/Contemplem%20a%20fotografia%20por%20tr%C3%A1s%20de%20'%20P%20A%20S%20S%20A%20D%20O%20'%20um%20videoclipe%20do%20single%20do%20meu%20consagrado%20%20(1).jpg", hint: "music video" }, 
+            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/Contemplem%20a%20fotografia%20por%20tr%C3%A1s%20de%20'%20P%20A%20S%20S%20A%20D%20O%20'%20um%20videoclipe%20do%20single%20do%20meu%20consagrado%20%20(2).jpg", hint: "singer" },
+            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/Contemplem%20a%20fotografia%20por%20tr%C3%A1s%20de%20'%20P%20A%20S%20S%20A%20D%20O%20'%20um%20videoclipe%20do%20single%20do%20meu%20consagrado%20.jpg", hint: "music video set" }
+        ], 
+        span: "col-span-1" 
+    },
     { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { 
