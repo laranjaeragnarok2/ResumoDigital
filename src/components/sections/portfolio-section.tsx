@@ -62,10 +62,10 @@ const SectionTitle = ({ icon: Icon, title, description }: { icon: React.ElementT
 );
 
 const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], variant?: 'tech' | 'art' }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[28rem]">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
         {projects.map((item, index) => (
             <Card key={index} className={`bg-card group overflow-hidden flex flex-col border-2 border-transparent hover:border-primary/80 transition-all duration-300 ${item.className}`}>
-                <div className="relative overflow-hidden h-1/2">
+                <div className="relative overflow-hidden aspect-video">
                     <Image
                         src={item.image}
                         alt={item.title}
@@ -81,13 +81,11 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
                         variant === 'art' ? "bg-black/20 group-hover:bg-black/40" : "bg-black/50"
                      )} />
                 </div>
-                <div className="flex flex-col justify-between flex-1 p-6 overflow-hidden">
+                <div className="flex flex-col justify-between flex-1 p-6">
                     <div>
                         <CardTitle className="mb-2">{item.title}</CardTitle>
-                        <CardDescription asChild>
-                           <div className="prose-sm max-h-24 overflow-y-auto">
-                                <p className="text-muted-foreground">{item.description}</p>
-                           </div>
+                        <CardDescription>
+                            <p className="text-muted-foreground prose-sm">{item.description}</p>
                         </CardDescription>
                     </div>
                     <CardFooter className="p-0 pt-4 flex justify-between items-center">
