@@ -26,7 +26,7 @@ const techProjects: Project[] = [
     {
         title: "JWildfire (Generative Art)",
         description: "Software multi-plataforma focado na criação e processamento de imagens, possivelmente fractais ou arte generativa. O JWildfire é uma aplicação baseada em Java que pode ser executada em diversos sistemas operacionais, incluindo Windows, macOS e Linux.",
-        image: "https://placehold.co/600x600.png",
+        image: "https://raw.githubusercontent.com/laranjaeragnarok2/j-wildfire-8.50/master/lib/Captura%20de%20tela%202025-05-25%20043231.png",
         hint: "generative art",
         link: "https://github.com/laranjaeragnarok2/j-wildfire-8.50",
         tags: ["Java", "Arte Generativa", "Fractais"],
