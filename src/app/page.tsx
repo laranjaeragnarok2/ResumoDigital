@@ -42,11 +42,11 @@ async function getReadmeContent(repoUrl: string): Promise<string | null> {
         
         for (const branch of mainBranches) {
             const readmeUrl = `https://raw.githubusercontent.com/${repoPath}/${branch}/README.md`;
-            // Using a specific cache tag to potentially revalidate later if needed
             const res = await fetch(readmeUrl, { next: { revalidate: 3600, tags: ['github-readme'] } }); 
             
             if (res.ok) {
-                return await res.text();
+                const text = await res.text();
+                return text;
             }
         }
         console.warn(`README not found in main or master for repo: ${repoUrl}`);
@@ -60,20 +60,23 @@ async function getReadmeContent(repoUrl: string): Promise<string | null> {
 export default async function Home() {
     const techProjectsWithReadme = await Promise.all(
         techProjects.map(async (project) => {
-            let summary = project.description;
-            try {
-                const readmeContent = await getReadmeContent(project.link);
-                // Only attempt to summarize if we have actual content
-                if (readmeContent) { 
-                    summary = await summarizeReadme(readmeContent);
+            let finalDescription = project.description;
+            const readmeContent = await getReadmeContent(project.link);
+
+            // Only try to summarize if readmeContent is a non-empty string
+            if (readmeContent && typeof readmeContent === 'string' && readmeContent.trim().length > 0) {
+                try {
+                    finalDescription = await summarizeReadme(readmeContent);
+                } catch (error) {
+                    console.error(`Failed to summarize README for ${project.link}:`, error instanceof Error ? error.message : "Unknown error");
+                    // Fallback to original description if summarization fails
+                    finalDescription = project.description; 
                 }
-            } catch (error) {
-                console.error(`Failed to summarize README for ${project.link}:`, error instanceof Error ? error.message : "Unknown error");
-                // Fallback to original description if summarization fails
             }
+            
             return {
                 ...project,
-                description: summary,
+                description: finalDescription,
             };
         })
     );
