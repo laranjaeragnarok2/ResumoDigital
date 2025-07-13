@@ -34,11 +34,11 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
     { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
     { 
-        title: "Ensaio Fotográfico", 
+        title: "Ensaio Streetwear 064 Camisetas", 
         images: [
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492518015_10212582753001906_1097093899405753835_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHm9FsXBsWMrsYs2NKbLmmOq2rKUR7hUJeraspRHuFQlzeL_o6sAMQudgI826RC-og&_nc_ohc=fM8_RjbKUWIQ7kNvwGKNlWo&_nc_oc=AdkNYybb_6_PrtAxEVnE8qD1stmRBfq9zRkplwMHEGxr_SZPnM3KpKz9czZihy8YPr4&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=UGa-lkd3zyLF03ALkaXX1A&oh=00_AfTt_divWj-nMbZCQkuaOVuauCoO1DgXintQrnX-ki1nQg&oe=6878FA40", hint: "photo shoot" }, 
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492463230_10212582756001981_5021368785761829477_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeELJ1HXCpP9e_vhPvxl3U-IA8I9EMQ4HBgDwj0QxDgcGPBL7ysSgLasWqyUrJsYCpA&_nc_ohc=BZWBQqBhqmwQ7kNvwEPAAw6&_nc_oc=Adn-MAC9r8dc_H6iUz9CPC8Xae8vIJw3tP56bllpoMn-ucnSb_7MUGAmz3HScca01rk&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=sD6LXacb7ewo_WfiujKxLg&oh=00_AfSI7DewbN0knqwolv6SE9SzYqeJ1HZaupTNcc1PhevlIg&oe=6878F17B", hint: "fashion model" },
-            { src: "https://placehold.co/800x600.png", hint: "fashion model outdoor" }
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492685810_10212582755721974_8690676233239382494_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGuOf1ihn4PUImwryilgZ4eFbX3fjYIR4gVtfd-NghHiGZQeeHS3aBmcAp6IMqZF2s&_nc_ohc=8JRtLdPotD0Q7kNvwE9Bq1L&_nc_oc=AdnKioQkrlif4oTPN7ymE5XaohfRgO4z7gJOsZ9gZ9TYpraWJVDF90Gu3VtbQ0NXcKs&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=PjXWfZM_Gg4xWkzoJRwiog&oh=00_AfQCizFoo3sjEnDMUE3tQSjSfX3kWx0ZbfnAKqdw4AbAgQ&oe=6878F201", hint: "fashion model outdoor" }
         ], 
         span: "col-span-1" 
     },
