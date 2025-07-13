@@ -42,12 +42,12 @@ const techProjects: Project[] = [
         className: ""
     },
     {
-        title: "Novo Projeto 2",
-        description: "Descrição do novo projeto 2. Aguardando os detalhes para atualizar.",
-        image: "https://placehold.co/600x600.png",
-        hint: "abstract design",
-        link: "https://github.com/laranjaeragnarok2",
-        tags: ["Vue.js", "Firebase"],
+        title: "Liquid Glass React 💧✨",
+        description: "Este projeto é uma demonstração interativa do efeito \"liquid glass\" (vidro líquido/fosco) e de personalização de interface do usuário, construído com Next.js, React, ShadCN UI e Tailwind CSS. Explore como diferentes parâmetros visuais podem ser ajustados em tempo real para criar uma experiência de usuário moderna e atraente.",
+        image: "https://placehold.co/600x400.png",
+        hint: "liquid glass effect",
+        link: "https://vidromorfismo.vercel.app/",
+        tags: ["Next.js", "React", "ShadCN UI", "Tailwind CSS"],
         className: ""
     },
 ];
