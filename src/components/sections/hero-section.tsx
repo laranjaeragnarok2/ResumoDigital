@@ -4,8 +4,13 @@ import Link from 'next/link';
 
 export default function HeroSection() {
     return (
-        <section id="inicio" className="min-h-screen flex flex-col items-center justify-center text-center p-4">
-            <div className="max-w-4xl mx-auto">
+        <section 
+            id="inicio" 
+            className="relative min-h-screen flex flex-col items-center justify-center text-center p-4 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(https://i.ibb.co/HTsTfPs6/envato-labs-image-edit.png)' }}
+        >
+            <div className="absolute inset-0 bg-background/70 backdrop-blur-sm z-0"></div>
+            <div className="relative z-10 max-w-4xl mx-auto">
                 <div className="mb-4">
                     <h2 className="text-lg font-semibold text-primary tracking-widest uppercase">Horyu Arthur</h2>
                 </div>
@@ -36,7 +41,7 @@ export default function HeroSection() {
                     </Link>
                 </div>
             </div>
-            <div className="absolute bottom-10 animate-bounce">
+            <div className="absolute bottom-10 animate-bounce z-10">
                 <ArrowDown className="h-6 w-6 text-muted-foreground" />
             </div>
         </section>
