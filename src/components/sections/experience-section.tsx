@@ -3,18 +3,46 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
     {
         role: "Líder de Projeto Web e Desenvolvedor Full-Stack",
-        company: "Instituto Guardião das Abelhas",
-        period: "Freelance | Maio 2025 - Presente",
-        description: "Planejamento e desenvolvimento end-to-end do site institucional. Entreguei uma solução web robusta e de alta performance alinhada à causa, com foco em engajamento e captação de recursos para a preservação de abelhas nativas do Cerrado.",
+        company: "Instituto Guardião das Abelhas (Freelance)",
+        period: "2025",
+        description: "Planejei e desenvolvi o site institucional de ponta a ponta, entregando uma solução web robusta, alinhada à causa e focada em engajamento para a preservação de abelhas nativas do Cerrado.",
         tags: ["Next.js", "TypeScript", "Vercel", "Gestão de Projetos"]
     },
     {
         role: "Designer Gráfico Sênior & Gerente de Projetos",
         company: "Smart Print Rio Verde",
-        period: "Tempo Integral | Jan 2023 - Maio 2025",
-        description: "Liderei a equipe de design em uma gráfica, gerenciando o ciclo de vida completo dos projetos, desde a consultoria ao cliente até a entrega final. Atuei diretamente no design visual, produção gráfica e gestão de projetos.",
+        period: "2023 - 2025",
+        description: "Liderei a equipe de design, gerenciando o ciclo completo dos projetos, desde a consultoria ao cliente até a entrega final, com forte atuação em design visual, produção gráfica e gestão.",
         tags: ["Design Gráfico", "Gestão de Equipe", "Adobe Suite"]
-    }
+    },
+    {
+        role: "Sócio-Proprietário & Gestor Criativo",
+        company: "Bistrô Zen",
+        period: "2022",
+        description: "Como cofundador, orquestrei todas as facetas do negócio, desde a curadoria do cardápio e identidade visual até a produção de eventos e programação musical, criando uma experiência cultural única.",
+        tags: ["Gestão de Negócios", "Marketing", "Produção de Eventos", "Culinária"]
+    },
+    {
+        role: "Diretor de Produção & SEO",
+        company: "Produtora Autônoma",
+        period: "2021",
+        description: "Atuei como um hub criativo, dirigindo produções musicais como beatmaker e técnico de som, além de gerenciar eventos, design e estratégias de publicidade digital para impulsionar artistas e marcas.",
+        tags: ["Produção Musical", "Beatmaking", "SEO", "Direção Criativa"]
+    },
+    {
+        role: "Especialista em SEO",
+        company: "Ancestral Studios",
+        period: "2020",
+        description: "Desenvolvi e executei estratégias de marketing 360 com foco em SEO, otimizando a presença digital de grandes clientes do agronegócio e aumentando significativamente sua visibilidade online.",
+        tags: ["Marketing 360", "SEO Avançado", "Agronegócio"]
+    },
+    {
+        role: "Desenvolvedor Web & Especialista em Segurança",
+        company: "Agência América",
+        period: "2019",
+        description: "Criei e mantive sites para mais de 50 clientes de alto perfil, como hospitais e concessionárias. Fui peça-chave na implementação de protocolos de segurança digital para proteger os ativos online dos clientes.",
+        tags: ["Desenvolvimento Web", "Segurança Digital", "HTML/CSS", "JavaScript"]
+    },
 ];
 
 export default function ExperienceSection() {
