@@ -64,6 +64,12 @@ const nextConfig: NextConfig = {
         hostname: 'previews.dropbox.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

@@ -50,11 +50,11 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-1" 
     },
     { 
-        title: "Prod S/N", 
+        title: "Feira Cultural", 
         images: [
-            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg?raw=true", hint: "documentary film" }, 
-            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/119083704_10207387092833649_4569987626614463091_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5bbf69&_nc_eui2=AeGoRiiGyBMrdsR9i_K6W6ppqAeKOzFgEp-oB4o7MWASn26NMhpZ96zBnWrhOHMO9ds&_nc_ohc=dgElFrtw68EQ7kNvwEG6qnK&_nc_oc=AdlZqRn4wzBXbxAb34fErcvtjQ_y3mKwgZiJd2dpGD8VqrBe7_mgOdakJzMQ1kXpcEg&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=tNhH1RtUuaHKd_9WLJm6Qg&oh=00_AfS2MxPLHmX7NJjRGDA4L3a17we8mTkRpcuWGN8cA-e_NQ&oe=689AABFB", hint: "event production" },
-            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/122127573_10207527653907588_4576362741580298758_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGvo12gSBtMZ5GD-Nl_VnzEdaWVkEA5GZR1pZWQQDkZlDnCFiwmiXXMVqrqtTxEMXc&_nc_ohc=6CgZR19iJtEQ7kNvwFw1oDl&_nc_oc=AdneNjtuHXzraU6WHlsq_WBUmPlI2b55iS1JGK8BKScQuKGRgR-i1E8lESprOJB7zbM&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=QtWBGdRxakoxw2fu2QD5Mw&oh=00_AfR6jWzC8ycqtIE_X5leQ60V-b0GgeGHCeg4kYLjk9hBqQ&oe=689AA974", hint: "event photography" }
+            { src: "https://i.imgur.com/d06L9e7.jpeg", hint: "cultural fair" }, 
+            { src: "https://i.imgur.com/ODs5LcV.jpeg", hint: "event production" },
+            { src: "https://i.imgur.com/UgLz4Zo.jpeg", hint: "event photography" }
         ], 
         span: "col-span-2"
     },
