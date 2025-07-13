@@ -94,7 +94,15 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-1"
     },
-    { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
+    { 
+        title: "Bosque da Cultura", 
+        images: [
+            { src: "https://i.postimg.cc/KYJLNkvj/IMG-1034-2.jpg", hint: "culture event" }, 
+            { src: "https://i.postimg.cc/tTJ6mqY5/IMG-1028-2.jpg", hint: "outdoor concert" },
+            { src: "https://i.postimg.cc/MKQ7Spt3/IMG-1018-2.jpg", hint: "people gathering" }
+        ], 
+        span: "col-span-1" 
+    },
     { 
         title: "Apresentações Musicais", 
         images: [
