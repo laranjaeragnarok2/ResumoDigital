@@ -1,12 +1,14 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Film, Code } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import ReactMarkdown from 'react-markdown';
 
-const techProjects = [
+
+export const techProjects = [
     {
         title: "Legado da Ponte de Pedra",
         description: "Landing page para o curta-metragem 'Legado da Ponte de Pedra', um projeto socioambiental focado na preservação do patrimônio histórico e geológico de Goiás.",
@@ -95,10 +97,16 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
                         variant === 'art' ? "bg-black/20 group-hover:bg-black/40" : "bg-black/50"
                      )} />
                 </div>
-                <div className="flex flex-col justify-between flex-1 p-6">
+                <div className="flex flex-col justify-between flex-1 p-6 overflow-hidden">
                     <div>
                         <CardTitle className="mb-2">{item.title}</CardTitle>
-                        <CardDescription>{item.description}</CardDescription>
+                        <CardDescription asChild>
+                           <div className="prose prose-sm prose-invert max-h-24 overflow-y-auto [&_p]:text-muted-foreground">
+                                <ReactMarkdown>
+                                    {item.description}
+                                </ReactMarkdown>
+                           </div>
+                        </CardDescription>
                     </div>
                     <CardFooter className="p-0 pt-4 flex justify-between items-center">
                         <div className="flex flex-wrap gap-2">
@@ -118,7 +126,11 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
     </div>
 );
 
-export default function PortfolioSection() {
+interface PortfolioSectionProps {
+    techProjects: Project[];
+}
+
+export default function PortfolioSection({ techProjects }: PortfolioSectionProps) {
     return (
         <section id="portfolio" className="py-16 sm:py-24 space-y-24">
             <div className="bg-background">
