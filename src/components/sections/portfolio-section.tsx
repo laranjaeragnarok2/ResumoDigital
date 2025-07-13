@@ -112,6 +112,15 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-1" 
     },
+    { 
+        title: "Space Psicodelico", 
+        images: [
+            { src: "https://i.postimg.cc/fR5jHg8M/IMG-9586.jpg", hint: "psychedelic space" },
+            { src: "https://i.postimg.cc/WbLntZDc/IMG-9405.jpg", hint: "abstract art" },
+            { src: "https://i.postimg.cc/fR5jHg8M/IMG-9586.jpg", hint: "colorful nebula" }
+        ], 
+        span: "col-span-1" 
+    },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
     { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
 ];
@@ -171,7 +180,7 @@ const ProjectGrid = ({ projects }: { projects: Project[] }) => (
     </div>
 );
 
-const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
+const MosaicCellContent = ({ project, onMouseEnter, onMouseLeave }: { project: AudiovisualProject; onMouseEnter?: () => void; onMouseLeave?: () => void; }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -195,7 +204,11 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     }, [project.images]);
 
     return (
-        <div className="relative overflow-hidden group h-full w-full cursor-pointer">
+        <div 
+            className="relative overflow-hidden group h-full w-full cursor-pointer"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
             {project.images.map((image, index) => (
                  <Image
                     key={index}
@@ -219,11 +232,19 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
 };
 
 
-const MosaicCell = ({ project, onSelect }: { project: AudiovisualProject, onSelect: () => void }) => (
-    <div className={cn(project.span, 'h-full')} onClick={onSelect}>
-        <MosaicCellContent project={project} />
-    </div>
-)
+const MosaicCell = ({ project, onSelect }: { project: AudiovisualProject, onSelect: () => void }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <div className={cn(project.span, 'h-full')} onClick={onSelect}>
+             <MosaicCellContent 
+                project={project}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            />
+        </div>
+    )
+}
 
 const AudiovisualMosaic = ({ projects, onProjectSelect }: { projects: AudiovisualProject[], onProjectSelect: (project: AudiovisualProject) => void }) => (
     <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-1">
