@@ -46,12 +46,6 @@ const nextConfig: NextConfig = {
         hostname: 'w.wallhaven.cc',
         port: '',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'firebasestorage.googleapis.com',
-        port: '',
-        pathname: '/**',
       }
     ],
   },
