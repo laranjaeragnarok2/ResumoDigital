@@ -48,7 +48,7 @@ const techProjects: Project[] = [
         hint: "abstract design",
         link: "https://github.com/laranjaeragnarok2",
         tags: ["Vue.js", "Firebase"],
-        className: "md:col-span-2"
+        className: ""
     },
 ];
 
