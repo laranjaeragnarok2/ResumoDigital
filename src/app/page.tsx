@@ -4,7 +4,7 @@ import PortfolioPage from "@/components/portfolio-page";
 
 const techProjects = [
     {
-        title: "Legado da Ponte de Pedra",
+        title: "Legado da Ponte de Pedra (Site and Short-film)",
         description: "Landing page para o curta-metragem 'Legado da Ponte de Pedra', um projeto socioambiental focado na preservação do patrimônio histórico e geológico de Goiás.",
         image: "https://placehold.co/800x600.png",
         hint: "bridge nature",
@@ -13,7 +13,7 @@ const techProjects = [
         className: ""
     },
     {
-        title: "Medusa Store (E-commerce)",
+        title: "Medusa Store (E-commerce Headless)",
         description: "Backend de e-commerce headless usando Medusa.js, incluindo landing page e estrutura completa para produtos, pedidos e clientes.",
         image: "https://placehold.co/600x800.png",
         hint: "ecommerce code",
@@ -22,7 +22,7 @@ const techProjects = [
         className: ""
     },
     {
-        title: "JWildfire (Arte Generativa)",
+        title: "JWildfire (Generative Art)",
         description: "Contribuição para um software multiplataforma de criação de arte generativa e fractais, unindo código e criação artística.",
         image: "https://placehold.co/600x600.png",
         hint: "fractal art",
@@ -63,8 +63,7 @@ export default async function Home() {
             let finalDescription = project.description;
             const readmeContent = await getReadmeContent(project.link);
 
-            // Only try to summarize if readmeContent is a non-empty string
-            if (readmeContent && typeof readmeContent === 'string' && readmeContent.trim().length > 0) {
+            if (typeof readmeContent === 'string' && readmeContent.trim().length > 0) {
                 try {
                     finalDescription = await summarizeReadme(readmeContent);
                 } catch (error) {
