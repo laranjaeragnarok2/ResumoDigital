@@ -33,9 +33,15 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Telas Urbanas", images: [{ src: "https://placehold.co/600x800.png", hint: "graffiti wall" }, { src: "https://placehold.co/600x800.png", hint: "street art" }], span: "" },
     { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
     { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
-    { title: "Ensaio Fotográfico", images: [{ src: "https://placehold.co/800x600.png", hint: "photo shoot" }, { src: "https://placehold.co/800x600.png", hint: "fashion model" }], span: "col-span-1" },
-    { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
-    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
+    { 
+        title: "Ensaio Fotográfico", 
+        images: [
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492518015_10212582753001906_1097093899405753835_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHm9FsXBsWMrsYs2NKbLmmOq2rKUR7hUJeraspRHuFQlzeL_o6sAMQudgI826RC-og&_nc_ohc=fM8_RjbKUWIQ7kNvwGKNlWo&_nc_oc=AdkNYybb_6_PrtAxEVnE8qD1stmRBfq9zRkplwMHEGxr_SZPnM3KpKz9czZihy8YPr4&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=UGa-lkd3zyLF03ALkaXX1A&oh=00_AfTt_divWj-nMbZCQkuaOVuauCoO1DgXintQrnX-ki1nQg&oe=6878FA40", hint: "photo shoot" }, 
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492463230_10212582756001981_5021368785761829477_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeELJ1HXCpP9e_vhPvxl3U-IA8I9EMQ4HBgDwj0QxDgcGPBL7ysSgLasWqyUrJsYCpA&_nc_ohc=BZWBQqBhqmwQ7kNvwEPAAw6&_nc_oc=Adn-MAC9r8dc_H6iUz9CPC8Xae8vIJw3tP56bllpoMn-ucnSb_7MUGAmz3HScca01rk&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=sD6LXacb7ewo_WfiujKxLg&oh=00_AfSI7DewbN0knqwolv6SE9SzYqeJ1HZaupTNcc1PhevlIg&oe=6878F17B", hint: "fashion model" },
+            { src: "https://placehold.co/800x600.png", hint: "fashion model outdoor" }
+        ], 
+        span: "col-span-1" 
+    },
     { 
         title: "Prod S/N", 
         images: [
@@ -45,6 +51,8 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-2"
     },
+    { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
+    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { title: "Performance Ao Vivo", images: [{ src: "https://placehold.co/600x600.png", hint: "live performance" }, { src: "https://placehold.co/600x600.png", hint: "concert lights" }], span: "col-span-1" },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
@@ -119,23 +127,33 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     };
 
     useEffect(() => {
-        if (!isHovering) {
-            const randomDelay = Math.random() * 4000 + 2000; // 2-6 seconds
-            intervalRef.current = setInterval(() => {
-                setCurrentIndex(prev => (prev + 1) % project.images.length);
-            }, randomDelay);
-        } else {
+        if (isHovering && project.images.length > 1) {
             stopInterval();
-            setCurrentIndex(1 % project.images.length);
+            setCurrentIndex(1); // Show second image on hover
+        } else if (!isHovering) {
+            setCurrentIndex(0); // Revert to first image
+            const randomDelay = Math.random() * 4000 + 2000; // 2-6 seconds
+            stopInterval(); // Clear existing interval before setting a new one
+            if (project.images.length > 1) {
+                intervalRef.current = setInterval(() => {
+                    setCurrentIndex(prev => (prev + 1) % project.images.length);
+                }, randomDelay);
+            }
         }
 
         return () => stopInterval();
-    }, [isHovering, project.images.length]);
+    }, [isHovering, project.images]);
 
-    const handleMouseEnter = () => setIsHovering(true);
+
+    const handleMouseEnter = () => {
+        if (project.images.length > 1) {
+           setIsHovering(true);
+        }
+    }
     const handleMouseLeave = () => {
-        setIsHovering(false);
-        setCurrentIndex(0);
+        if (project.images.length > 1) {
+           setIsHovering(false);
+        }
     };
 
     return (
@@ -145,7 +163,7 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
             onMouseLeave={handleMouseLeave}
         >
             {project.images.map((image, index) => (
-                <Image
+                 <Image
                     key={index}
                     src={image.src}
                     alt={project.title}
@@ -153,12 +171,11 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
                     data-ai-hint={image.hint}
                     className={cn(
                         "object-cover w-full h-full transition-opacity duration-700 ease-in-out",
-                        currentIndex === index ? "opacity-100" : "opacity-0",
-                        isHovering && "group-hover:opacity-0",
-                        isHovering && index === 1 && "group-hover:opacity-100"
+                         (isHovering && project.images.length > 1) ? (index === 1 ? 'opacity-100' : 'opacity-0') : (index === 0 ? 'opacity-100' : 'opacity-0')
                     )}
                 />
             ))}
+
             <div className="absolute inset-0 bg-black/20 transition-all duration-300 group-hover:bg-black/50"></div>
             <div className="absolute bottom-0 left-0 p-4 transition-all duration-300 opacity-0 group-hover:opacity-100">
                 <h3 className="font-bold text-white text-lg">{project.title}</h3>
@@ -169,7 +186,7 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
 
 
 const MosaicCell = ({ project, onSelect }: { project: AudiovisualProject, onSelect: () => void }) => (
-    <div className={cn(project.span)} onClick={onSelect}>
+    <div className={cn(project.span, 'h-full')} onClick={onSelect}>
         <MosaicCellContent project={project} />
     </div>
 )
@@ -232,10 +249,13 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
 
     useEffect(() => {
         const checkScreenSize = () => {
-            setIsDesktop(window.innerWidth >= DESKTOP_BREAKPOINT);
+            const isDesktopQuery = window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`);
+            setIsDesktop(isDesktopQuery.matches);
         };
+        
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
+        
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
