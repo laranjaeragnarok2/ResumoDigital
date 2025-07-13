@@ -11,7 +11,7 @@ const experiences = [
     {
         role: "Designer Gráfico Sênior & Gerente de Projetos",
         company: "Smart Print Rio Verde",
-        period: "2023 - 2025",
+        period: "2023",
         description: "Liderei a equipe de design, gerenciando o ciclo completo dos projetos, desde a consultoria ao cliente até a entrega final, com forte atuação em design visual, produção gráfica e gestão.",
         tags: ["Design Gráfico", "Gestão de Equipe", "Adobe Suite"]
     },
