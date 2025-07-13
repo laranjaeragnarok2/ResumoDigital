@@ -36,18 +36,19 @@ export default function SkillsSection() {
     const targetRef = useRef<HTMLDivElement | null>(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
+        offset: ['start end', 'end start']
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+    const x = useTransform(scrollYProgress, [0, 1], ['5%', '-95%']);
 
     return (
         <section ref={targetRef} id="habilidades" className="relative h-[300vh] bg-background">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x }} className="flex gap-8">
-                    <div className="w-screen flex-shrink-0 flex flex-col items-center justify-center px-4 text-center">
-                         <h2 className="text-3xl font-bold tracking-tight mb-2 font-headline">Caixa de Ferramentas</h2>
-                         <p className="text-muted-foreground max-w-2xl mx-auto">Um conjunto de habilidades multidisciplinares para transformar ideias em realidade.</p>
-                    </div>
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-2xl w-full px-4 text-center z-0">
+                     <h2 className="text-3xl font-bold tracking-tight mb-2 font-headline">Caixa de Ferramentas</h2>
+                     <p className="text-muted-foreground">Um conjunto de habilidades multidisciplinares para transformar ideias em realidade.</p>
+                </div>
+                <motion.div style={{ x }} className="flex gap-8 pl-[20vw]">
                     {Object.entries(skills).map(([category, items]) => (
                         <SkillCard key={category} category={category} items={items} />
                     ))}
