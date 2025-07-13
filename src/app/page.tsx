@@ -17,7 +17,7 @@ const techProjects: Project[] = [
     {
         title: "Medusa Store (E-commerce Headless)",
         description: "Landing page para e-commerce com lista de espera via Formspree, notificações por e-mail, painel de controle, design responsivo com tema escuro e botões flutuantes para contato direto.",
-        image: "https://placehold.co/600x600.png",
+        image: "https://camo.githubusercontent.com/06ac02cad9cb9612893be054d5c486eaa4b44f2b0a086ab9f5f23075d4c44aee/68747470733a2f2f692e706f7374696d672e63632f4a373644684a475a2f73637265656e636170747572652d6d65647573612d73746f72652d73686f702d323032352d30362d32352d31352d34332d31362e706e67",
         hint: "medusa store",
         link: "https://github.com/laranjaeragnarok2/medusa-store",
         tags: ["Medusa.js", "Next.js", "PostgreSQL"],
