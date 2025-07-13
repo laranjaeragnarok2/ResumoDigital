@@ -5,7 +5,7 @@ import type { Project } from "@/components/sections/portfolio-section";
 const techProjects: Project[] = [
     {
         title: "Legado da Ponte de Pedra (Site and Short-film)",
-        description: "Desenvolvimento de site e curta-metragem para o projeto 'Legado da Ponte de Pedra'.",
+        description: "Este é o repositório oficial do projeto \"Legado da Ponte de Pedra\". Mais do que um site, é uma plataforma de conscientização e mobilização para a preservação de um dos mais importantes patrimônios geológicos, arqueológicos e culturais de Goiás, localizado na divisa entre Rio Verde e Paraúna.",
         image: "https://placehold.co/800x600.png",
         hint: "bridge stone",
         link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
