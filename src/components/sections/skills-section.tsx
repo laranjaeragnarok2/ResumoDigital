@@ -209,6 +209,9 @@ export default function SkillsSection() {
                 <p className="text-muted-foreground/70 max-w-2xl mx-auto mt-2 italic text-sm">
                     (umas podem estar mais afiadas que outras)
                 </p>
+                <p className="text-muted-foreground/50 max-w-2xl mx-auto mt-2 text-xs">
+                    clique na ferramenta para saber mais
+                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {skillsData.map((skill) => (
