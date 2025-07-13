@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'files.realpython.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'w.wallhaven.cc',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

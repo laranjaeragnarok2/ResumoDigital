@@ -42,9 +42,9 @@ const techProjects: Project[] = [
         className: ""
     },
     {
-        title: "Liquid Glass React 💧✨",
+        title: "Liquid Glass React",
         description: "Este projeto é uma demonstração interativa do efeito \"liquid glass\" (vidro líquido/fosco) e de personalização de interface do usuário, construído com Next.js, React, ShadCN UI e Tailwind CSS. Explore como diferentes parâmetros visuais podem ser ajustados em tempo real para criar uma experiência de usuário moderna e atraente.",
-        image: "https://placehold.co/600x400.png",
+        image: "https://w.wallhaven.cc/full/yq/wallhaven-yqj53x.png",
         hint: "liquid glass effect",
         link: "https://vidromorfismo.vercel.app/",
         tags: ["Next.js", "React", "ShadCN UI", "Tailwind CSS"],
