@@ -15,6 +15,8 @@ export type Project = {
     image: string;
     hint: string;
     link: string;
+    specialLink?: string;
+    specialLinkText?: string;
     tags: string[];
     className: string;
 };
@@ -89,8 +91,13 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
                         </CardDescription>
                     </div>
                     <CardFooter className="p-0 pt-4 flex justify-between items-center">
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 items-center">
                             {item.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                             {item.specialLink && item.specialLinkText && (
+                                <Link href={item.specialLink} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden text-xs bg-primary/20 text-primary-foreground/80 px-2 py-1 rounded transition-all duration-300 reflection hover:reflection hover:bg-primary/80 hover:text-primary-foreground hover:-translate-y-px cursor-pointer">
+                                  {item.specialLinkText}
+                                </Link>
+                            )}
                         </div>
                         {item.link && (
                             <Button asChild variant="ghost" size="sm">
