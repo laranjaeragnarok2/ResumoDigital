@@ -25,6 +25,7 @@ type AudiovisualProject = {
     title: string;
     images: { src: string; hint: string }[];
     span: string;
+    link?: string;
 };
 
 const audiovisualProjects: AudiovisualProject[] = [
@@ -34,7 +35,15 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Ensaio Fotográfico", images: [{ src: "https://placehold.co/800x600.png", hint: "photo shoot" }, { src: "https://placehold.co/800x600.png", hint: "fashion model" }], span: "col-span-1" },
     { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
     { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
-    { title: "Documentário", images: [{ src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg", hint: "documentary film" }, { src: "https://placehold.co/800x400.png", hint: "interview" }], span: "col-span-2" },
+    { 
+        title: "Prod S/N", 
+        images: [
+            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg?raw=true", hint: "documentary film" }, 
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/119083704_10207387092833649_4569987626614463091_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5bbf69&_nc_eui2=AeGoRiiGyBMrdsR9i_K6W6ppqAeKOzFgEp-oB4o7MWASn26NMhpZ96zBnWrhOHMO9ds&_nc_ohc=dgElFrtw68EQ7kNvwEG6qnK&_nc_oc=AdlZqRn4wzBXbxAb34fErcvtjQ_y3mKwgZiJd2dpGD8VqrBe7_mgOdakJzMQ1kXpcEg&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=tNhH1RtUuaHKd_9WLJm6Qg&oh=00_AfS2MxPLHmX7NJjRGDA4L3a17we8mTkRpcuWGN8cA-e_NQ&oe=689AABFB", hint: "event production" }
+        ], 
+        span: "col-span-2",
+        link: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/122127573_10207527653907588_4576362741580298758_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGvo12gSBtMZ5GD-Nl_VnzEdaWVkEA5GZR1pZWQQDkZlDnCFiwmiXXMVqrqtTxEMXc&_nc_ohc=6CgZR19iJtEQ7kNvwFw1oDl&_nc_oc=AdneNjtuHXzraU6WHlsq_WBUmPlI2b55iS1JGK8BKScQuKGRgR-i1E8lESprOJB7zbM&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=QtWBGdRxakoxw2fu2QD5Mw&oh=00_AfR6jWzC8ycqtIE_X5leQ60V-b0GgeGHCeg4kYLjk9hBqQ&oe=689AA974"
+    },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { title: "Performance Ao Vivo", images: [{ src: "https://placehold.co/600x600.png", hint: "live performance" }, { src: "https://placehold.co/600x600.png", hint: "concert lights" }], span: "col-span-1" },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
@@ -96,7 +105,7 @@ const ProjectGrid = ({ projects }: { projects: Project[] }) => (
     </div>
 );
 
-const MosaicCell = ({ project }: { project: AudiovisualProject }) => {
+const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovering, setIsHovering] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -130,7 +139,7 @@ const MosaicCell = ({ project }: { project: AudiovisualProject }) => {
 
     return (
         <div 
-            className={`relative overflow-hidden group ${project.span}`}
+            className={`relative overflow-hidden group h-full w-full`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -156,6 +165,22 @@ const MosaicCell = ({ project }: { project: AudiovisualProject }) => {
         </div>
     );
 };
+
+
+const MosaicCell = ({ project }: { project: AudiovisualProject }) => {
+    if (project.link) {
+        return (
+            <Link href={project.link} target="_blank" rel="noopener noreferrer" className={cn("block", project.span)}>
+                <MosaicCellContent project={project} />
+            </Link>
+        )
+    }
+    return (
+        <div className={cn(project.span)}>
+            <MosaicCellContent project={project} />
+        </div>
+    )
+}
 
 const AudiovisualMosaic = ({ projects }: { projects: AudiovisualProject[] }) => (
     <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-1">

@@ -52,6 +52,12 @@ const nextConfig: NextConfig = {
         hostname: 'github.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent-bsb1-1.xx.fbcdn.net',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
