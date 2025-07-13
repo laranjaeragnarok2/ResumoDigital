@@ -37,7 +37,9 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Documentário", images: [{ src: "https://placehold.co/800x400.png", hint: "documentary film" }, { src: "https://placehold.co/800x400.png", hint: "interview" }], span: "col-span-2" },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { title: "Performance Ao Vivo", images: [{ src: "https://placehold.co/600x600.png", hint: "live performance" }, { src: "https://placehold.co/600x600.png", hint: "concert lights" }], span: "col-span-1" },
-    { title: "Animação", images: [{ src: "https://placehold.co/600x600.png", hint: "animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
+    { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
+    { title: "Animação 3D", images: [{ src: "https://placehold.co/600x600.png", hint: "3d animation" }, { src: "https://placehold.co/600x600.png", hint: "cgi character" }], span: "col-span-1" },
+    { title: "Stop Motion", images: [{ src: "https://placehold.co/600x600.png", hint: "stop motion" }, { src: "https://placehold.co/600x600.png", hint: "claymation" }], span: "col-span-1" },
 ];
 
 
@@ -55,13 +57,13 @@ const ProjectGrid = ({ projects }: { projects: Project[] }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
         {projects.map((item, index) => (
             <Card key={index} className={`bg-card group overflow-hidden flex flex-col border-2 border-transparent hover:border-primary/80 transition-all duration-300 ${item.className}`}>
-                <div className="relative overflow-hidden aspect-[16/9]">
+                <div className="relative overflow-hidden aspect-video">
                     <Image
                         src={item.image}
                         alt={item.title}
                         fill
                         data-ai-hint={item.hint}
-                        className="object-cover transition-transform duration-300"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                      <div className="absolute inset-0 bg-black/50 transition-colors" />
                 </div>
@@ -221,5 +223,3 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
         </section>
     );
 }
-
-    
