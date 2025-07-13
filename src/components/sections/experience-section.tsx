@@ -1,3 +1,4 @@
+import React from 'react';
 
 const Syntax = ({ color, children }: { color: string, children: React.ReactNode }) => (
     <span className={color}>{children}</span>
@@ -21,22 +22,29 @@ const experiences = [
 export default function ExperienceSection() {
     return (
         <div className="font-code text-sm md:text-base">
-            <span className="text-muted-foreground">// Professional Experience</span>
+            <div className="text-muted-foreground">// Professional Experience</div>
             <pre className="whitespace-pre-wrap leading-relaxed mt-4">
                 <code>
-                    <Syntax color="text-chart-5">const</Syntax> <Syntax color="text-chart-1">workHistory</Syntax> = [
-                    {'{'}
+                    <div><Syntax color="text-chart-5">const</Syntax> <Syntax color="text-chart-1"> workHistory </Syntax>= [</div>
                     {experiences.map((exp, index) => (
-                        <span key={exp.company} className="ml-4 my-4 border-l border-border/50 pl-4 block">
-                            <Syntax color="text-chart-2">role</Syntax>: <Syntax color="text-chart-3">"{exp.role}"</Syntax>,{'\n'}
-                            <Syntax color="text-chart-2">company</Syntax>: <Syntax color="text-chart-3">"{exp.company}"</Syntax>,{'\n'}
-                            <Syntax color="text-chart-2">period</Syntax>: <Syntax color="text-chart-3">"{exp.period}"</Syntax>,{'\n'}
-                            <Syntax color="text-chart-2">details</Syntax>: <Syntax color="text-chart-3">`{exp.description}`</Syntax>{'\n'}
-                            {index < experiences.length - 1 && '}, {'\n'}{'{'}
-                        </span>
+                        <div key={exp.company} className="ml-4 my-2">
+                            <div>{'{'}</div>
+                            <div className="ml-4">
+                                <Syntax color="text-chart-2">role</Syntax>: <Syntax color="text-chart-3">"{exp.role}"</Syntax>,
+                            </div>
+                            <div className="ml-4">
+                                <Syntax color="text-chart-2">company</Syntax>: <Syntax color="text-chart-3">"{exp.company}"</Syntax>,
+                            </div>
+                            <div className="ml-4">
+                                <Syntax color="text-chart-2">period</Syntax>: <Syntax color="text-chart-3">"{exp.period}"</Syntax>,
+                            </div>
+                            <div className="ml-4">
+                                <Syntax color="text-chart-2">details</Syntax>: <Syntax color="text-chart-3">`{exp.description}`</Syntax>
+                            </div>
+                            <div>{'}'}{index < experiences.length - 1 ? ',' : ''}</div>
+                        </div>
                     ))}
-                    {'}'}{'\n'}
-                    ];
+                    <div>];</div>
                 </code>
             </pre>
         </div>
