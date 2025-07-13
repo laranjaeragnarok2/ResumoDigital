@@ -33,8 +33,8 @@ Se você deseja explorar o código ou executar este projeto em sua máquina loca
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/laranjaeragnarok2/meu-portfolio.git
-    cd meu-portfolio
+    git clone https://github.com/laranjaeragnarok2/horyfolio.git
+    cd horyfolio
     ```
 
 2.  **Instale as dependências:**
