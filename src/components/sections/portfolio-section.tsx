@@ -360,8 +360,8 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                     <div className="container mx-auto px-4 py-16 sm:py-24">
                         <SectionTitle 
                             icon={Film}
-                            title="Lente Criativa"
-                            description="Explorações no mundo do audiovisual, da fotografia à produção de experiências"
+                            title="Olhar Criativo"
+                            description="explorações do mundo de maneira visual, com foto video e produção de experiências"
                         />
                         <AudiovisualMosaic projects={audiovisualProjects} onProjectSelect={handleProjectSelect} />
                     </div>
