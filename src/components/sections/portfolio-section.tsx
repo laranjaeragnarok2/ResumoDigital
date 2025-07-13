@@ -14,7 +14,7 @@ const techProjects = [
         hint: "bridge nature",
         link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
         tags: ["Next.js", "TypeScript", "Vercel"],
-        className: "md:col-span-2"
+        className: ""
     },
     {
         title: "Medusa Store (E-commerce)",
@@ -23,7 +23,7 @@ const techProjects = [
         hint: "ecommerce code",
         link: "https://github.com/laranjaeragnarok2/medusa-store",
         tags: ["Medusa.js", "PostgreSQL", "Next.js"],
-        className: "md:row-span-2"
+        className: ""
     },
     {
         title: "JWildfire (Arte Generativa)",
