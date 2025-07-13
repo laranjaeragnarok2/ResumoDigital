@@ -5,8 +5,8 @@ const experiences = [
         role: "Líder de Projeto Web e Desenvolvedor Full-Stack",
         company: "Instituto Guardião das Abelhas",
         period: "2025",
-        description: "Planejei e desenvolvi o site institucional de ponta a ponta, entregando uma solução web robusta, alinhada à causa e focada em engajamento para a preservação de abelhas nativas do Cerrado.",
-        tags: ["Next.js", "TypeScript", "Vercel", "Gestão de Projetos"]
+        description: "Além de desenvolver a landing page alinhada à causa, atuei como publicitário e planejei uma estratégia de comunicação digital que tem gerado excelentes resultados e engajamento para a preservação de abelhas nativas.",
+        tags: ["Next.js", "TypeScript", "Vercel", "Estratégia Digital", "Publicidade"]
     },
     {
         role: "Designer Gráfico Sênior & Gerente de Projetos",
