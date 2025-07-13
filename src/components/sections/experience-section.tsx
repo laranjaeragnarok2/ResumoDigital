@@ -76,10 +76,12 @@ export default function ExperienceSection() {
                         </div>
                     </div>
                 ))}
+            </div>
 
-                 <div className="text-center mt-16">
-                    <p className="text-muted-foreground">E muitas outras experiências que moldaram minha jornada...</p>
-                </div>
+            <div className="text-center mt-16">
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                    Esta é uma seleção dos trabalhos que mais me marcaram. Ao longo dessa trajetória, também atuei em diversos projetos como freelancer, sempre em busca de novos desafios e aprendizados.
+                </p>
             </div>
         </section>
     );
