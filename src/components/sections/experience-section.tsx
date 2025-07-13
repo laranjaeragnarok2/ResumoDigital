@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
     {
         role: "Líder de Projeto Web e Desenvolvedor Full-Stack",
-        company: "Instituto Guardião das Abelhas (Freelance)",
+        company: "Instituto Guardião das Abelhas",
         period: "2025",
         description: "Planejei e desenvolvi o site institucional de ponta a ponta, entregando uma solução web robusta, alinhada à causa e focada em engajamento para a preservação de abelhas nativas do Cerrado.",
         tags: ["Next.js", "TypeScript", "Vercel", "Gestão de Projetos"]
@@ -16,31 +16,31 @@ const experiences = [
         tags: ["Design Gráfico", "Gestão de Equipe", "Adobe Suite"]
     },
     {
-        role: "Sócio-Proprietário & Gestor Criativo",
+        role: "Gestor Criativo & Sócio-Proprietário",
         company: "Bistrô Zen",
         period: "2022",
         description: "Como cofundador, orquestrei todas as facetas do negócio, desde a curadoria do cardápio e identidade visual até a produção de eventos e programação musical, criando uma experiência cultural única.",
         tags: ["Gestão de Negócios", "Marketing", "Produção de Eventos", "Culinária"]
     },
     {
-        role: "Diretor de Produção & SEO",
-        company: "Produtora Autônoma",
+        role: "Produtor & Agente Cultural",
+        company: "Produtora Autônoma (@prod.semnome)",
         period: "2021",
-        description: "Atuei como um hub criativo, dirigindo produções musicais como beatmaker e técnico de som, além de gerenciar eventos, design e estratégias de publicidade digital para impulsionar artistas e marcas.",
-        tags: ["Produção Musical", "Beatmaking", "SEO", "Direção Criativa"]
+        description: "Atuei como um hub criativo para a cena do rap underground, organizando eventos de grande impacto como batalhas de rima e a Feira Cultural da Meia Lua, além de gerenciar a produção musical e estratégias de publicidade.",
+        tags: ["Produção Musical", "Beatmaking", "Gestão Cultural", "Direção Criativa"]
     },
     {
-        role: "Especialista em SEO",
+        role: "Desenvolvedor Front-end & Estrategista de Marketing",
         company: "Ancestral Studios",
         period: "2020",
         description: "Desenvolvi e executei estratégias de marketing 360 com foco em SEO, otimizando a presença digital de grandes clientes do agronegócio e aumentando significativamente sua visibilidade online.",
-        tags: ["Marketing 360", "SEO Avançado", "Agronegócio"]
+        tags: ["Marketing 360", "SEO Avançado", "Desenvolvimento Front-end"]
     },
     {
-        role: "Desenvolvedor Web & Especialista em Segurança",
+        role: "Desenvolvedor Web",
         company: "Agência América",
         period: "2019",
-        description: "Criei e mantive sites para mais de 50 clientes de alto perfil, como hospitais e concessionárias. Fui peça-chave na implementação de protocolos de segurança digital para proteger os ativos online dos clientes.",
+        description: "Criei e mantive sites para mais de 50 clientes de alto perfil. Fui peça-chave na implementação de protocolos de segurança digital para proteger os ativos online dos clientes.",
         tags: ["Desenvolvimento Web", "Segurança Digital", "HTML/CSS", "JavaScript"]
     },
 ];
@@ -51,20 +51,21 @@ export default function ExperienceSection() {
             <h2 className="text-3xl font-bold tracking-tight text-center mb-2 font-headline">Posições de Destaque</h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">Minha trajetória une tecnologia, design e gestão para entregar resultados de impacto.</p>
             
-            <div className="relative max-w-3xl mx-auto">
-                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border" aria-hidden="true"></div>
+            <div className="relative max-w-4xl mx-auto">
+                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border/50" aria-hidden="true"></div>
+                
                 {experiences.map((exp, index) => (
-                    <div key={index} className="relative pl-8 md:pl-0 md:flex items-start mb-12 group">
-                        <div className="md:w-1/2 md:pr-8 md:text-right">
-                           <div className="sticky top-24">
+                    <div key={index} className={`relative flex items-start mb-12 group ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                        <div className="md:w-1/2 md:px-8 flex-shrink-0">
+                           <div className={`sticky top-24 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                              <p className="text-sm text-muted-foreground mb-1">{exp.period}</p>
-                             <h3 className="text-lg font-semibold text-primary">{exp.role}</h3>
-                             <p className="font-medium">{exp.company}</p>
+                             <h3 className="text-xl font-semibold text-primary">{exp.role}</h3>
+                             <p className="font-medium text-lg">{exp.company}</p>
                            </div>
                         </div>
-                        <div className="absolute left-0 md:left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background transition-transform group-hover:scale-125" aria-hidden="true"></div>
-                        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
-                            <div className="bg-card p-6 rounded-lg border">
+                        <div className="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background transition-transform group-hover:scale-125" aria-hidden="true"></div>
+                        <div className="md:w-1/2 md:px-8 mt-4 md:mt-0">
+                            <div className="bg-card p-6 rounded-lg border-2 border-transparent group-hover:border-primary/50 transition-colors">
                                 <p className="text-card-foreground/80 leading-relaxed">{exp.description}</p>
                                 <div className="mt-4 flex flex-wrap gap-2">
                                     {exp.tags.map(tag => (
@@ -75,6 +76,10 @@ export default function ExperienceSection() {
                         </div>
                     </div>
                 ))}
+
+                 <div className="text-center mt-16">
+                    <p className="text-muted-foreground">E muitas outras experiências que moldaram minha jornada...</p>
+                </div>
             </div>
         </section>
     );
