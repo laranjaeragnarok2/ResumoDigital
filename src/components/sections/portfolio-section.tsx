@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ArrowRight, Film, Code, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // This is now a type definition, the actual data is in page.tsx
 export type Project = {
@@ -21,35 +21,25 @@ export type Project = {
     className: string;
 };
 
-const audiovisualProjects: Project[] = [
-    {
-        title: "Telas Urbanas",
-        description: "Série fotográfica que documenta a vibrante cena de graffiti e arte de rua em Rio Verde.",
-        image: "https://placehold.co/600x600.png",
-        hint: "graffiti wall",
-        link: "", // No link for this one
-        tags: ["Fotografia", "Arte Urbana"],
-        className: ""
-    },
-    {
-        title: "Ritmos do Cerrado",
-        description: "Curta-metragem que explora a intersecção da música tradicional com a vida moderna no Cerrado.",
-        image: "https://placehold.co/800x600.png",
-        hint: "film music",
-        link: "", // No link for this one
-        tags: ["Direção", "Edição de Vídeo"],
-        className: "md:col-span-2"
-    },
-     {
-        title: "DJ Set - Cultura na Praça",
-        description: "Performance de DJ ao vivo em evento cultural local, misturando batidas brasileiras com música eletrônica.",
-        image: "https://placehold.co/600x600.png",
-        hint: "dj music",
-        link: "", // No link for this one
-        tags: ["DJing", "Performance Ao Vivo"],
-        className: ""
-    },
+type AudiovisualProject = {
+    title: string;
+    images: { src: string; hint: string }[];
+    span: string;
+};
+
+const audiovisualProjects: AudiovisualProject[] = [
+    { title: "Telas Urbanas", images: [{ src: "https://placehold.co/600x800.png", hint: "graffiti wall" }, { src: "https://placehold.co/600x800.png", hint: "street art" }], span: "row-span-2" },
+    { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
+    { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
+    { title: "Ensaio Fotográfico", images: [{ src: "https://placehold.co/800x600.png", hint: "photo shoot" }, { src: "https://placehold.co/800x600.png", hint: "fashion model" }], span: "col-span-1" },
+    { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
+    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "row-span-2" },
+    { title: "Documentário", images: [{ src: "https://placehold.co/800x400.png", hint: "documentary film" }, { src: "https://placehold.co/800x400.png", hint: "interview" }], span: "col-span-2" },
+    { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
+    { title: "Performance Ao Vivo", images: [{ src: "https://placehold.co/600x600.png", hint: "live performance" }, { src: "https://placehold.co/600x600.png", hint: "concert lights" }], span: "col-span-1" },
+    { title: "Animação", images: [{ src: "https://placehold.co/600x600.png", hint: "animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
 ];
+
 
 const SectionTitle = ({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) => (
     <div className="text-center mb-12">
@@ -61,25 +51,19 @@ const SectionTitle = ({ icon: Icon, title, description }: { icon: React.ElementT
     </div>
 );
 
-const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], variant?: 'tech' | 'art' }) => (
+const ProjectGrid = ({ projects }: { projects: Project[] }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
         {projects.map((item, index) => (
             <Card key={index} className={`bg-card group overflow-hidden flex flex-col border-2 border-transparent hover:border-primary/80 transition-all duration-300 ${item.className}`}>
-                <div className="relative overflow-hidden aspect-video">
+                <div className="relative overflow-hidden aspect-[16/9]">
                     <Image
                         src={item.image}
                         alt={item.title}
                         fill
                         data-ai-hint={item.hint}
-                        className={cn(
-                            "object-cover transition-transform duration-300",
-                            variant === 'art' && "group-hover:scale-105"
-                        )}
+                        className="object-cover transition-transform duration-300"
                     />
-                     <div className={cn(
-                        "absolute inset-0 transition-colors",
-                        variant === 'art' ? "bg-black/20 group-hover:bg-black/40" : "bg-black/50"
-                     )} />
+                     <div className="absolute inset-0 bg-black/50 transition-colors" />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                     <div className="flex-grow">
@@ -111,6 +95,76 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
     </div>
 );
 
+const MosaicCell = ({ project }: { project: AudiovisualProject }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovering, setIsHovering] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    const stopInterval = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+    };
+
+    useEffect(() => {
+        if (!isHovering) {
+            const randomDelay = Math.random() * 4000 + 2000; // 2-6 seconds
+            intervalRef.current = setInterval(() => {
+                setCurrentIndex(prev => (prev + 1) % project.images.length);
+            }, randomDelay);
+        } else {
+            stopInterval();
+            setCurrentIndex(1 % project.images.length);
+        }
+
+        return () => stopInterval();
+    }, [isHovering, project.images.length]);
+
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+        setCurrentIndex(0);
+    };
+
+    return (
+        <div 
+            className={`relative overflow-hidden group ${project.span}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
+            {project.images.map((image, index) => (
+                <Image
+                    key={index}
+                    src={image.src}
+                    alt={project.title}
+                    fill
+                    data-ai-hint={image.hint}
+                    className={cn(
+                        "object-cover w-full h-full transition-opacity duration-700 ease-in-out",
+                        currentIndex === index ? "opacity-100" : "opacity-0",
+                        isHovering && "group-hover:opacity-0",
+                        isHovering && index === 1 && "group-hover:opacity-100"
+                    )}
+                />
+            ))}
+            <div className="absolute inset-0 bg-black/20 transition-all duration-300 group-hover:bg-black/50"></div>
+            <div className="absolute bottom-0 left-0 p-4 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                <h3 className="font-bold text-white text-lg">{project.title}</h3>
+            </div>
+        </div>
+    );
+};
+
+const AudiovisualMosaic = ({ projects }: { projects: AudiovisualProject[] }) => (
+    <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] gap-1">
+        {projects.map((project, index) => (
+            <MosaicCell key={index} project={project} />
+        ))}
+    </div>
+);
+
+
 interface PortfolioSectionProps {
     techProjects: Project[];
 }
@@ -137,7 +191,7 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                         title="Canvas Digital"
                         description="Uma seleção de meus trabalhos mais recentes e relevantes em desenvolvimento e tecnologia."
                     />
-                    <ProjectGrid projects={visibleProjects} variant="tech" />
+                    <ProjectGrid projects={visibleProjects} />
                     <div className="text-center mt-12">
                         {!isExpanded && techProjects.length > INITIAL_VISIBLE_PROJECTS ? (
                             <Button onClick={handleShowMore} size="lg">
@@ -161,9 +215,11 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                         title="Lente Criativa"
                         description="Explorações no mundo do audiovisual, da fotografia à produção de experiências"
                     />
-                    <ProjectGrid projects={audiovisualProjects} variant="art" />
+                    <AudiovisualMosaic projects={audiovisualProjects} />
                 </div>
             </div>
         </section>
     );
 }
+
+    
