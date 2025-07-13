@@ -4,7 +4,7 @@ import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/ca
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Film, Code, Github, X } from "lucide-react";
+import { ArrowRight, Film, Code, Github, X, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from 'react';
@@ -201,7 +201,7 @@ const MosaicCellContent = ({ project, onMouseEnter, onMouseLeave }: { project: A
     useEffect(() => {
         stopInterval();
         if (project.images.length > 1) {
-            const randomDelay = Math.random() * 4000 + 3000; // 3-7 seconds
+            const randomDelay = Math.random() * 4000 + 3000; 
             intervalRef.current = setInterval(() => {
                 setCurrentIndex(prev => (prev + 1) % project.images.length);
             }, randomDelay);
