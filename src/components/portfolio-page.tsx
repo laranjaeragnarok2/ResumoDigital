@@ -3,10 +3,8 @@ import React from 'react';
 import HeroSection from "@/components/sections/hero-section";
 import SkillsSection from "@/components/sections/skills-section";
 import ExperienceSection from "@/components/sections/experience-section";
-import PortfolioSection from "@/components/sections/portfolio-section";
-import { techProjects as initialTechProjects } from "@/components/sections/portfolio-section";
+import PortfolioSection, { type Project } from "@/components/sections/portfolio-section";
 
-type Project = (typeof initialTechProjects)[0];
 
 interface PortfolioPageProps {
   techProjects: Project[];

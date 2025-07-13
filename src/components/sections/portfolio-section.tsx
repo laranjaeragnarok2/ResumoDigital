@@ -1,47 +1,31 @@
+"use client"
 import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Film, Code } from "lucide-react";
+import { ArrowRight, Film, Code, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import React, { useState } from 'react';
 
-export const techProjects = [
-    {
-        title: "Legado da Ponte de Pedra",
-        description: "Landing page para o curta-metragem 'Legado da Ponte de Pedra', um projeto socioambiental focado na preservação do patrimônio histórico e geológico de Goiás.",
-        image: "https://placehold.co/800x600.png",
-        hint: "bridge nature",
-        link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
-        tags: ["Next.js", "TypeScript", "Vercel"],
-        className: ""
-    },
-    {
-        title: "Medusa Store (E-commerce)",
-        description: "Backend de e-commerce headless usando Medusa.js, incluindo landing page e estrutura completa para produtos, pedidos e clientes.",
-        image: "https://placehold.co/600x800.png",
-        hint: "ecommerce code",
-        link: "https://github.com/laranjaeragnarok2/medusa-store",
-        tags: ["Medusa.js", "PostgreSQL", "Next.js"],
-        className: ""
-    },
-    {
-        title: "JWildfire (Arte Generativa)",
-        description: "Contribuição para um software multiplataforma de criação de arte generativa e fractais, unindo código e criação artística.",
-        image: "https://placehold.co/600x600.png",
-        hint: "fractal art",
-        link: "https://github.com/laranjaeragnarok2/j-wildfire-8.50",
-        tags: ["Java", "Cuda", "Arte Generativa"],
-        className: ""
-    },
-];
+// This is now a type definition, the actual data is in page.tsx
+export type Project = {
+    title: string;
+    description: string;
+    image: string;
+    hint: string;
+    link: string;
+    tags: string[];
+    className: string;
+};
 
-const audiovisualProjects = [
+const audiovisualProjects: Project[] = [
     {
         title: "Telas Urbanas",
         description: "Série fotográfica que documenta a vibrante cena de graffiti e arte de rua em Rio Verde.",
         image: "https://placehold.co/600x600.png",
         hint: "graffiti wall",
+        link: "", // No link for this one
         tags: ["Fotografia", "Arte Urbana"],
         className: ""
     },
@@ -50,6 +34,7 @@ const audiovisualProjects = [
         description: "Curta-metragem que explora a intersecção da música tradicional com a vida moderna no Cerrado.",
         image: "https://placehold.co/800x600.png",
         hint: "film music",
+        link: "", // No link for this one
         tags: ["Direção", "Edição de Vídeo"],
         className: "md:col-span-2"
     },
@@ -58,6 +43,7 @@ const audiovisualProjects = [
         description: "Performance de DJ ao vivo em evento cultural local, misturando batidas brasileiras com música eletrônica.",
         image: "https://placehold.co/600x600.png",
         hint: "dj music",
+        link: "", // No link for this one
         tags: ["DJing", "Performance Ao Vivo"],
         className: ""
     },
@@ -72,8 +58,6 @@ const SectionTitle = ({ icon: Icon, title, description }: { icon: React.ElementT
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">{description}</p>
     </div>
 );
-
-type Project = (typeof techProjects)[0];
 
 const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], variant?: 'tech' | 'art' }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[28rem]">
@@ -126,7 +110,19 @@ interface PortfolioSectionProps {
     techProjects: Project[];
 }
 
+const INITIAL_VISIBLE_PROJECTS = 6;
+
 export default function PortfolioSection({ techProjects }: PortfolioSectionProps) {
+    const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_PROJECTS);
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const handleShowMore = () => {
+        setVisibleCount(techProjects.length);
+        setIsExpanded(true);
+    };
+
+    const visibleProjects = techProjects.slice(0, visibleCount);
+    
     return (
         <section id="portfolio" className="py-16 sm:py-24 space-y-24">
             <div className="bg-background">
@@ -136,7 +132,21 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                         title="Canvas Digital"
                         description="Uma seleção de meus trabalhos em desenvolvimento e tecnologia."
                     />
-                    <ProjectGrid projects={techProjects} variant="tech" />
+                    <ProjectGrid projects={visibleProjects} variant="tech" />
+                    <div className="text-center mt-12">
+                        {isExpanded || techProjects.length <= INITIAL_VISIBLE_PROJECTS ? (
+                             <Button asChild size="lg">
+                                <Link href="https://github.com/laranjaeragnarok2" target="_blank" rel="noopener noreferrer">
+                                    <Github className="mr-2" />
+                                    Ver Todos no GitHub
+                                </Link>
+                            </Button>
+                        ) : (
+                            <Button onClick={handleShowMore} size="lg">
+                                Ver Mais Projetos
+                            </Button>
+                        )}
+                    </div>
                 </div>
             </div>
             <div className="bg-card">
