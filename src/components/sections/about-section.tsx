@@ -11,7 +11,7 @@ export default function AboutSection() {
                     <div className="md:col-span-2">
                         <div className="relative aspect-[4/5] rounded-lg overflow-hidden group">
                              <Image 
-                                src="https://i.ibb.co/7C9y40S/IMG-1142.jpg"
+                                src="https://i.ibb.co/DSMjdWF/image.jpg"
                                 alt="Horyu Arthur"
                                 fill
                                 data-ai-hint="portrait developer"
