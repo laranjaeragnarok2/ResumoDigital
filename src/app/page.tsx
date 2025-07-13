@@ -35,7 +35,7 @@ const techProjects: Project[] = [
     {
         title: "HoryuAI",
         description: "HoryuAI é um bot para Discord com integração à API Gemini para gerar conteúdo dinâmico. Ele foi desenvolvido para trazer recomendações de filmes, gerar imagens a partir de prompts e auxiliar com comandos administrativos como kick e ban, além de enviar notícias semanais (news) de forma automatizada.",
-        image: "https://placehold.co/800x600.png",
+        image: "https://files.realpython.com/media/How-to-Make-a-Discord-Bot-With-Python_Watermarked.23887eee3226.jpg",
         hint: "discord bot ai",
         link: "https://github.com/laranjaeragnarok2/HoryuAI",
         tags: ["Python", "Discord.py", "Gemini API"],
