@@ -84,7 +84,7 @@ const SkillCard = ({ icon: Icon, category, description, items }: { icon: React.E
         <p className="text-muted-foreground mb-6 text-sm flex-grow">{description}</p>
         <div className="flex flex-wrap gap-2">
             {items.map((skill) => (
-                <span key={skill} className="relative overflow-hidden text-xs bg-secondary text-muted-foreground px-2 py-1 rounded transition-all duration-300 reflection hover:reflection">
+                <span key={skill} className="relative overflow-hidden text-xs bg-secondary text-muted-foreground px-2 py-1 rounded transition-all duration-300 reflection hover:reflection hover:bg-primary hover:text-primary-foreground hover:-translate-y-1">
                     {skill}
                 </span>
             ))}
