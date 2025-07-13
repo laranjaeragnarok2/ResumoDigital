@@ -11,11 +11,12 @@ export default function AboutSection() {
                     <div className="md:col-span-2">
                         <div className="relative aspect-[4/5] rounded-lg overflow-hidden group">
                              <Image 
-                                src="https://placehold.co/800x1000.png"
+                                src="https://i.ibb.co/7C9y40S/IMG-1142.jpg"
                                 alt="Horyu Arthur"
                                 fill
                                 data-ai-hint="portrait developer"
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                style={{ filter: 'hue-rotate(120deg) saturate(0.8)' }}
                             />
                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
