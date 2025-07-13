@@ -52,30 +52,51 @@ export default function ExperienceSection() {
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">Minha trajetória une tecnologia, design e gestão para entregar resultados de impacto.</p>
             
             <div className="relative max-w-4xl mx-auto">
-                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border/50" aria-hidden="true"></div>
+                {/* Desktop timeline */}
+                <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border/50 hidden md:block" aria-hidden="true"></div>
                 
-                {experiences.map((exp, index) => (
-                    <div key={index} className={`relative flex items-start mb-12 group ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                        <div className="md:w-1/2 md:px-8 flex-shrink-0">
-                           <div className={`sticky top-24 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                             <p className="text-sm text-muted-foreground mb-1">{exp.period}</p>
-                             <h3 className="text-xl font-semibold text-primary">{exp.role}</h3>
-                             <p className="font-medium text-lg">{exp.company}</p>
-                           </div>
+                {/* Mobile container */}
+                <div className="md:hidden space-y-8">
+                    {experiences.map((exp, index) => (
+                        <div key={`mobile-${index}`} className="bg-card p-6 rounded-lg border-2 border-primary/20">
+                            <p className="text-sm text-muted-foreground mb-1">{exp.period}</p>
+                            <h3 className="text-xl font-semibold text-primary">{exp.role}</h3>
+                            <p className="font-medium text-lg mb-3">{exp.company}</p>
+                            <p className="text-card-foreground/80 leading-relaxed mb-4">{exp.description}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {exp.tags.map(tag => (
+                                    <Badge key={tag} variant="secondary">{tag}</Badge>
+                                ))}
+                            </div>
                         </div>
-                        <div className="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background transition-transform group-hover:scale-125" aria-hidden="true"></div>
-                        <div className="md:w-1/2 md:px-8 mt-4 md:mt-0">
-                            <div className="bg-card p-6 rounded-lg border-2 border-transparent group-hover:border-primary/50 transition-colors">
-                                <p className="text-card-foreground/80 leading-relaxed">{exp.description}</p>
-                                <div className="mt-4 flex flex-wrap gap-2">
-                                    {exp.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                                    ))}
+                    ))}
+                </div>
+
+                {/* Desktop container */}
+                <div className="hidden md:block">
+                    {experiences.map((exp, index) => (
+                        <div key={`desktop-${index}`} className={`relative flex items-start mb-12 group ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                            <div className="md:w-1/2 md:px-8 flex-shrink-0">
+                               <div className={`sticky top-24 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                 <p className="text-sm text-muted-foreground mb-1">{exp.period}</p>
+                                 <h3 className="text-xl font-semibold text-primary">{exp.role}</h3>
+                                 <p className="font-medium text-lg">{exp.company}</p>
+                               </div>
+                            </div>
+                            <div className="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-primary border-4 border-background transition-transform group-hover:scale-125" aria-hidden="true"></div>
+                            <div className="md:w-1/2 md:px-8 mt-4 md:mt-0">
+                                <div className="bg-card p-6 rounded-lg border-2 border-transparent group-hover:border-primary/50 transition-colors">
+                                    <p className="text-card-foreground/80 leading-relaxed">{exp.description}</p>
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        {exp.tags.map(tag => (
+                                            <Badge key={tag} variant="secondary">{tag}</Badge>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
             <div className="text-center mt-16">
