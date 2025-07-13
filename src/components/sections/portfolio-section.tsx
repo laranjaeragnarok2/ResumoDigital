@@ -1,3 +1,4 @@
+
 "use client"
 import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,7 +31,7 @@ type AudiovisualProject = {
 };
 
 const audiovisualProjects: AudiovisualProject[] = [
-    { title: "Telas Urbanas", images: [{ src: "https://placehold.co/600x800.png", hint: "graffiti wall" }, { src: "https://placehold.co/600x800.png", hint: "street art" }], span: "" },
+    { title: "Telas Urbanas", images: [{ src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/refs/heads/main/Colab%20com%20a%20%40antinpc_clubObrigado%20pela%20confian%C3%A7a%20irm%C3%A3o%20%40hugoosousa%23carsticker%20%23customstickers%20%23.webp", hint: "car sticker" }, { src: "https://placehold.co/600x800.png", hint: "street art" }], span: "" },
     { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
     { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
     { 
@@ -286,5 +287,3 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
         </>
     );
 }
-
-    
