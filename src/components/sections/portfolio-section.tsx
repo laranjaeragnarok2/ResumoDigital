@@ -116,7 +116,6 @@ const ProjectGrid = ({ projects }: { projects: Project[] }) => (
 
 const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isHovering, setIsHovering] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const stopInterval = () => {
@@ -127,41 +126,19 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     };
 
     useEffect(() => {
-        if (isHovering && project.images.length > 1) {
-            stopInterval();
-            setCurrentIndex(1); // Show second image on hover
-        } else if (!isHovering) {
-            setCurrentIndex(0); // Revert to first image
+        stopInterval();
+        if (project.images.length > 1) {
             const randomDelay = Math.random() * 4000 + 2000; // 2-6 seconds
-            stopInterval(); // Clear existing interval before setting a new one
-            if (project.images.length > 1) {
-                intervalRef.current = setInterval(() => {
-                    setCurrentIndex(prev => (prev + 1) % project.images.length);
-                }, randomDelay);
-            }
+            intervalRef.current = setInterval(() => {
+                setCurrentIndex(prev => (prev + 1) % project.images.length);
+            }, randomDelay);
         }
-
+        
         return () => stopInterval();
-    }, [isHovering, project.images]);
-
-
-    const handleMouseEnter = () => {
-        if (project.images.length > 1) {
-           setIsHovering(true);
-        }
-    }
-    const handleMouseLeave = () => {
-        if (project.images.length > 1) {
-           setIsHovering(false);
-        }
-    };
+    }, [project.images]);
 
     return (
-        <div 
-            className={`relative overflow-hidden group h-full w-full cursor-pointer`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+        <div className="relative overflow-hidden group h-full w-full cursor-pointer">
             {project.images.map((image, index) => (
                  <Image
                     key={index}
@@ -171,7 +148,7 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
                     data-ai-hint={image.hint}
                     className={cn(
                         "object-cover w-full h-full transition-opacity duration-700 ease-in-out",
-                         (isHovering && project.images.length > 1) ? (index === 1 ? 'opacity-100' : 'opacity-0') : (index === 0 ? 'opacity-100' : 'opacity-0')
+                        index === currentIndex ? 'opacity-100' : 'opacity-0'
                     )}
                 />
             ))}
@@ -309,3 +286,5 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
         </>
     );
 }
+
+    
