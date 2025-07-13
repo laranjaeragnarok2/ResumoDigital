@@ -100,6 +100,9 @@ export default function SkillsSection() {
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                     Uma coleção de habilidades multidisciplinares que me permite transitar entre o universo da tecnologia e da arte, transformando ideias em realidade.
                 </p>
+                <p className="text-muted-foreground/70 max-w-2xl mx-auto mt-2 italic text-sm">
+                    (umas podem estar mais afiadas que outras)
+                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {skillsData.map((skill) => (
