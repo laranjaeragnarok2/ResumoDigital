@@ -39,8 +39,8 @@ const summarizeReadmeFlow = ai.defineFlow(
     outputSchema: SummarizeReadmeOutputSchema,
   },
   async (readmeContent) => {
-    if (!readmeContent.trim()) {
-        return "A summary could not be generated for this project.";
+    if (!readmeContent || !readmeContent.trim()) {
+        return "A summary could not be generated for this project as the README is empty.";
     }
     const {output} = await prompt(readmeContent);
     return output!;

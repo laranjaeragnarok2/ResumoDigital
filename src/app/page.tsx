@@ -101,7 +101,7 @@ async function getReadmeContent(repoUrl: string): Promise<string | null> {
                 return await res.text();
             }
         }
-        console.warn(`README not found for repo: ${repoUrl}`);
+        console.warn(`README not found in main or master for repo: ${repoUrl}`);
         return null;
     } catch (error) {
         console.error(`Error fetching README for ${repoUrl}:`, error);
@@ -119,7 +119,7 @@ export default async function Home() {
                     summary = await summarizeReadme(readmeContent);
                 }
             } catch (error) {
-                console.error(`Failed to summarize README for ${project.link}:`, error);
+                console.error(`Failed to summarize README for ${project.link}:`, error instanceof Error ? error.message : "Unknown error");
                 // Fallback to original description if summarization fails
             }
             return {
