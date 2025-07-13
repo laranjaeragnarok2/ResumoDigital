@@ -1,13 +1,13 @@
+import { summarizeReadme } from "@/ai/flows/summarize-readme-flow";
 import PortfolioPage from "@/components/portfolio-page";
 import { techProjects as initialTechProjects } from "@/components/sections/portfolio-section";
 
-async function getReadmeContent(repoUrl: string) {
+async function getReadmeContent(repoUrl: string): Promise<string | null> {
     try {
         const urlParts = repoUrl.match(/github\.com\/([^\/]+\/[^\/]+)/);
         if (!urlParts) return null;
 
         const repoPath = urlParts[1];
-        // We try a few common main branch names
         const mainBranches = ['main', 'master'];
         
         for (const branch of mainBranches) {
@@ -29,10 +29,20 @@ async function getReadmeContent(repoUrl: string) {
 export default async function Home() {
     const techProjectsWithReadme = await Promise.all(
         initialTechProjects.map(async (project) => {
-            const readme = await getReadmeContent(project.link);
+            const readmeContent = await getReadmeContent(project.link);
+            let summary = project.description;
+            if (readmeContent) {
+                try {
+                    summary = await summarizeReadme(readmeContent);
+                } catch (error) {
+                    console.error(`Failed to summarize README for ${project.link}:`, error);
+                    // Fallback to original description if summarization fails
+                    summary = project.description; 
+                }
+            }
             return {
                 ...project,
-                description: readme || project.description,
+                description: summary,
             };
         })
     );

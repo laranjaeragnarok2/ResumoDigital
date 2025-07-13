@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { ArrowRight, Film, Code } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import ReactMarkdown from 'react-markdown';
-
 
 export const techProjects = [
     {
@@ -101,10 +99,8 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
                     <div>
                         <CardTitle className="mb-2">{item.title}</CardTitle>
                         <CardDescription asChild>
-                           <div className="prose prose-sm prose-invert max-h-24 overflow-y-auto [&_p]:text-muted-foreground">
-                                <ReactMarkdown>
-                                    {item.description}
-                                </ReactMarkdown>
+                           <div className="prose-sm max-h-24 overflow-y-auto">
+                                <p className="text-muted-foreground">{item.description}</p>
                            </div>
                         </CardDescription>
                     </div>
