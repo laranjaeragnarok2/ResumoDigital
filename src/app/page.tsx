@@ -32,6 +32,24 @@ const techProjects: Project[] = [
         tags: ["Java", "Arte Generativa", "Fractais"],
         className: ""
     },
+    {
+        title: "Novo Projeto 1",
+        description: "Descrição do novo projeto 1. Pode me fornecer os detalhes para que eu possa preencher aqui.",
+        image: "https://placehold.co/800x600.png",
+        hint: "tech code",
+        link: "https://github.com/laranjaeragnarok2",
+        tags: ["React", "Node.js"],
+        className: ""
+    },
+    {
+        title: "Novo Projeto 2",
+        description: "Descrição do novo projeto 2. Aguardando os detalhes para atualizar.",
+        image: "https://placehold.co/600x600.png",
+        hint: "abstract design",
+        link: "https://github.com/laranjaeragnarok2",
+        tags: ["Vue.js", "Firebase"],
+        className: "md:col-span-2"
+    },
 ];
 
 export default function Home() {

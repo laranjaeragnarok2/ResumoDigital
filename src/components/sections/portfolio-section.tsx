@@ -81,14 +81,14 @@ const ProjectGrid = ({ projects, variant = 'art' }: { projects: Project[], varia
                         variant === 'art' ? "bg-black/20 group-hover:bg-black/40" : "bg-black/50"
                      )} />
                 </div>
-                <div className="flex flex-col justify-between flex-1 p-6">
-                    <div>
+                <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex-grow">
                         <CardTitle className="mb-2">{item.title}</CardTitle>
                         <CardDescription>
                             <p className="text-muted-foreground prose-sm">{item.description}</p>
                         </CardDescription>
                     </div>
-                    <CardFooter className="p-0 pt-4 flex justify-between items-center">
+                    <CardFooter className="p-0 pt-4 flex justify-between items-center mt-auto">
                         <div className="flex flex-wrap gap-2 items-center">
                             {item.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                              {item.specialLink && item.specialLinkText && (
@@ -115,7 +115,7 @@ interface PortfolioSectionProps {
     techProjects: Project[];
 }
 
-const INITIAL_VISIBLE_PROJECTS = 6;
+const INITIAL_VISIBLE_PROJECTS = 3;
 
 export default function PortfolioSection({ techProjects }: PortfolioSectionProps) {
     const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_PROJECTS);
@@ -139,16 +139,16 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                     />
                     <ProjectGrid projects={visibleProjects} variant="tech" />
                     <div className="text-center mt-12">
-                        {isExpanded || techProjects.length <= INITIAL_VISIBLE_PROJECTS ? (
+                        {!isExpanded && techProjects.length > INITIAL_VISIBLE_PROJECTS ? (
+                            <Button onClick={handleShowMore} size="lg">
+                                Ver Mais Projetos
+                            </Button>
+                        ) : (
                              <Button asChild size="lg">
                                 <Link href="https://github.com/laranjaeragnarok2" target="_blank" rel="noopener noreferrer">
                                     <Github className="mr-2" />
                                     Ver Todos no GitHub
                                 </Link>
-                            </Button>
-                        ) : (
-                            <Button onClick={handleShowMore} size="lg">
-                                Ver Mais Projetos
                             </Button>
                         )}
                     </div>
