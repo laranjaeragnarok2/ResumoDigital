@@ -59,11 +59,11 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-2"
     },
     { 
-        title: "Clipe Musical - Cidade (Dropbox)", 
+        title: "Ensaio Streetwear Chronic x 064 Camisetas", 
         images: [
-            { src: "https://previews.dropbox.com/p/thumb/ACvh4BlKDqFrfFnzXSGgkUCI8nNRR07RmdTFKPRcs6WgfMMTES9HTfJ31KmBeWV0jy9QdVXeNqCrV12t0k-Mjn7hZpv41_Wf2_G2646Fm2eDeSpu7-p-Ka27tJ3Np-tSoIF83Mdlp9DSl1hijtt0I2D__vNiG3wg5R5Jc01p2idOUzA6H3ZKePml3r1qxCddSdram6l0Y3w-osPxgtKOFQkNa5lyya79e9xpUU2VbXltap4CC15VbOzM12O3EN7ygKuFoBQzfAOTkvyThelUnucTJomKrrHhE7GEpvY3pfqVCDr_zqMIT0Pzwehy1zJeoULoOGhkLNTihK_wUWtrpO1V/p.png?is_prewarmed=true", hint: "music video city" }, 
-            { src: "https://previews.dropbox.com/p/thumb/ACs8hB8KrB4f6hAMh3bSjWyrXwVGPv_R-sYxGwMPjvv6VQRv-mkzOgta6w8qFhtVuLF32EIfCm4xrUo5WhFXjUaNJ-tHS1yP3XykEL7KQPUuk5iJtPUcjRklw1xSY1tKCR9LiHE2dOSfKw9OxJsvmq_MV4w06rMoWwRoXY_-U9Rtg4GfelX0IX5ag3uv-P6hBe9CQyIDW7Pb3w4a7-Ffh5MLvS40GFKvGYalrSbsJq6uYFL8rl3FnunVgWwpmOoVaBHtGyqn5HvCmKHpn8UDXfD6E3m0x28tANIhhVNH7coohKjo3oymZ7drGO0uhwLzRLw/p.png", hint: "urban music video" },
-            { src: "https://previews.dropbox.com/p/thumb/ACtFkkGkMReLYreoQ6ZJmzC_QE2LwYl0hm58cWSH2Yv-CDh0GhJmAwEl9wx8DMZW6Fqh0TZz63wK4bsk7d6ulIPhhcieOeTx9BEQIGC-bmo3TEY0Cg5tO6hR2p3Ak369z0uCIbM2aSJco7WSOdEK4sth-59i3_as2KhEm1ZNjbYgtjL2umuit94xTblYMxH5nk9K8A1p9v_syhiDSy95M1cdTie_JtWgAni7AkeHf6cS5T0DZFuPhm8wuvk5jPOgeQ6S1GCfQTUKKKNzwjCNa2nj1YujbXKzno6CyxQ736IQg5SBTKqX2Zuh2qUsclrYy2A/p.png", hint: "singer city scape" }
+            { src: "https://i.postimg.cc/dVSwjJcv/Recap-Ensaio-que-fiz-comissionado-pela-064-camisetas-Eu-gosto-muito-da-liberdade-que-meu-6.webp", hint: "streetwear fashion" }, 
+            { src: "https://i.postimg.cc/Gp8rM6bD/Recap-Ensaio-que-fiz-comissionado-pela-064-camisetas-Eu-gosto-muito-da-liberdade-que-meu-5.webp", hint: "urban model" },
+            { src: "https://i.postimg.cc/6QkKFzQm/Recap-Ensaio-que-fiz-comissionado-pela-064-camisetas-Eu-gosto-muito-da-liberdade-que-meu-4.webp", hint: "apparel photoshoot" }
         ], 
         span: "col-span-1" 
     },
