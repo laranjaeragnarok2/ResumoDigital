@@ -34,7 +34,7 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Ensaio Fotográfico", images: [{ src: "https://placehold.co/800x600.png", hint: "photo shoot" }, { src: "https://placehold.co/800x600.png", hint: "fashion model" }], span: "col-span-1" },
     { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
     { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
-    { title: "Documentário", images: [{ src: "https://placehold.co/800x400.png", hint: "documentary film" }, { src: "https://placehold.co/800x400.png", hint: "interview" }], span: "col-span-2" },
+    { title: "Documentário", images: [{ src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg", hint: "documentary film" }, { src: "https://placehold.co/800x400.png", hint: "interview" }], span: "col-span-2" },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { title: "Performance Ao Vivo", images: [{ src: "https://placehold.co/600x600.png", hint: "live performance" }, { src: "https://placehold.co/600x600.png", hint: "concert lights" }], span: "col-span-1" },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
