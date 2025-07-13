@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Instagram } from 'lucide-react';
 
 export default function AboutSection() {
     return (
@@ -33,9 +34,10 @@ export default function AboutSection() {
                             </p>
                         </div>
                         <div className="mt-8">
-                             <Button asChild size="lg" variant="outline">
-                                <Link href="/Horyu_CV.pdf" target="_blank" rel="noopener noreferrer">
-                                    Baixar meu CV
+                             <Button asChild size="lg" className="bg-gradient-instagram text-white font-bold hover:opacity-90 transition-opacity">
+                                <Link href="https://www.instagram.com/horyu.multimedia/" target="_blank" rel="noopener noreferrer">
+                                    <Instagram className="mr-2" />
+                                    Acesse meu Instagram
                                 </Link>
                             </Button>
                         </div>
