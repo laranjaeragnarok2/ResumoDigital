@@ -171,17 +171,29 @@ interface PortfolioSectionProps {
 }
 
 const INITIAL_VISIBLE_PROJECTS = 3;
+const DESKTOP_BREAKPOINT = 1024;
 
 export default function PortfolioSection({ techProjects }: PortfolioSectionProps) {
     const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_PROJECTS);
     const [isExpanded, setIsExpanded] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(true);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsDesktop(window.innerWidth >= DESKTOP_BREAKPOINT);
+        };
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     const handleShowMore = () => {
         setVisibleCount(techProjects.length);
         setIsExpanded(true);
     };
 
-    const visibleProjects = techProjects.slice(0, visibleCount);
+    const projectsToShow = isDesktop ? techProjects : techProjects.slice(0, visibleCount);
+    const showMoreButtonIsVisible = !isDesktop && !isExpanded && techProjects.length > INITIAL_VISIBLE_PROJECTS;
     
     return (
         <section id="portfolio" className="py-16 sm:py-24 space-y-24">
@@ -192,9 +204,9 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                         title="Canvas Digital"
                         description="Uma seleção de meus trabalhos mais recentes e relevantes em desenvolvimento e tecnologia."
                     />
-                    <ProjectGrid projects={visibleProjects} />
+                    <ProjectGrid projects={projectsToShow} />
                     <div className="text-center mt-12">
-                        {!isExpanded && techProjects.length > INITIAL_VISIBLE_PROJECTS ? (
+                        {showMoreButtonIsVisible ? (
                             <Button onClick={handleShowMore} size="lg">
                                 Ver Mais Projetos
                             </Button>
