@@ -55,9 +55,9 @@ const techProjects: Project[] = [
 
 const videoProjects: VideoProject[] = [
     {
-        title: "Videoclipe Exemplo 1",
-        description: "Uma breve descrição sobre este projeto de vídeo.",
-        youtubeId: "dQw4w9WgXcQ"
+        title: "CI.DA.DE",
+        description: "1. aglomeração humana localizada numa área geográfica. Ficha Técnica: Beat: Aquino, Mix/Master: Aquino, Fotografia/Shot: Horyu, Edição: Aquino, Produção: SENTINELAS",
+        youtubeId: "eMHWmiX3nFo"
     },
     {
         title: "Videoclipe Exemplo 2",
