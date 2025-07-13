@@ -40,6 +40,7 @@ const audiovisualProjects: AudiovisualProject[] = [
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
     { title: "Animação 3D", images: [{ src: "https://placehold.co/600x600.png", hint: "3d animation" }, { src: "https://placehold.co/600x600.png", hint: "cgi character" }], span: "col-span-1" },
     { title: "Stop Motion", images: [{ src: "https://placehold.co/600x600.png", hint: "stop motion" }, { src: "https://placehold.co/600x600.png", hint: "claymation" }], span: "col-span-1" },
+    { title: "Design de Som", images: [{ src: "https://placehold.co/600x600.png", hint: "sound design" }, { src: "https://placehold.co/600x600.png", hint: "audio waves" }], span: "col-span-1" },
 ];
 
 
