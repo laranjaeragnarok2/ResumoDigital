@@ -31,9 +31,15 @@ type AudiovisualProject = {
 };
 
 const audiovisualProjects: AudiovisualProject[] = [
-    { title: "Telas Urbanas", images: [{ src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/refs/heads/main/Colab%20com%20a%20%40antinpc_clubObrigado%20pela%20confian%C3%A7a%20irm%C3%A3o%20%40hugoosousa%23carsticker%20%23customstickers%20%23.webp", hint: "car sticker" }, { src: "https://placehold.co/600x800.png", hint: "street art" }], span: "" },
-    { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
-    { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
+    { 
+        title: "Stance Stickers Design", 
+        images: [
+            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/refs/heads/main/Colab%20com%20a%20%40antinpc_clubObrigado%20pela%20confian%C3%A7a%20irm%C3%A3o%20%40hugoosousa%23carsticker%20%23customstickers%20%23.webp", hint: "car sticker" }, 
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492545810_10212573905940735_4051312092924235796_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHbI_eOj46XZFo0W6tZBfuHVzFjDrZhkWVXMWMOtmGRZegN5anCWOg_vtA5Akm7jik&_nc_ohc=HopDdTVlSWgQ7kNvwHCJjUv&_nc_oc=Adkp468FLBpMEdaWcWB5pfFSa1gCe9ncJx-OeH4GyF2bpyNe5862-nAkXB8jgZ98Ark&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=DPU0fcLvi_MYADPaNp5MKA&oh=00_AfTYufIgbWPrebrz57ysp3Xgk2S8nGwIkV1IMPHZPakhsw&oe=6879099D", hint: "street art" },
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492069908_10212573905100714_6989240701723839438_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGxi4biWYS1q1SHPDP6avGgq1H4Cgl5V82rUfgKCXlXzczDHARX5CaToX_yzd4LgJQ&_nc_ohc=80ICiWM4zqQQ7kNvwESB3vS&_nc_oc=AdkLgkd-0XjmarmS7dGkLmk-U_hjWwOIYVoD-BkvVLtcFBUt12e0NAC-BLuDGwcMoQc&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=DViImCGDYXXuInmf7eyvpA&oh=00_AfRXJl5hxUES9MS0idhOOhDWI3jgD_n7F0H3GTYg5pL68w&oe=68790C2B", hint: "car sticker night" }
+        ], 
+        span: "" 
+    },
     { 
         title: "Ensaio Streetwear 064 Camisetas", 
         images: [
@@ -46,12 +52,14 @@ const audiovisualProjects: AudiovisualProject[] = [
     { 
         title: "Prod S/N", 
         images: [
-            { src: "https://raw.githubusercontent.com/laranjaeragnarok2/meu-portfolio-assets/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg?raw=true", hint: "documentary film" }, 
+            { src: "https://github.com/laranjaeragnarok2/meu-portfolio-assets/blob/main/com%201%20passinho%20de%20cadavez%20a%20gente%20vai%20looonge.jpg?raw=true", hint: "documentary film" }, 
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/119083704_10207387092833649_4569987626614463091_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5bbf69&_nc_eui2=AeGoRiiGyBMrdsR9i_K6W6ppqAeKOzFgEp-oB4o7MWASn26NMhpZ96zBnWrhOHMO9ds&_nc_ohc=dgElFrtw68EQ7kNvwEG6qnK&_nc_oc=AdlZqRn4wzBXbxAb34fErcvtjQ_y3mKwgZiJd2dpGD8VqrBe7_mgOdakJzMQ1kXpcEg&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=tNhH1RtUuaHKd_9WLJm6Qg&oh=00_AfS2MxPLHmX7NJjRGDA4L3a17we8mTkRpcuWGN8cA-e_NQ&oe=689AABFB", hint: "event production" },
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t1.6435-9/122127573_10207527653907588_4576362741580298758_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGvo12gSBtMZ5GD-Nl_VnzEdaWVkEA5GZR1pZWQQDkZlDnCFiwmiXXMVqrqtTxEMXc&_nc_ohc=6CgZR19iJtEQ7kNvwFw1oDl&_nc_oc=AdneNjtuHXzraU6WHlsq_WBUmPlI2b55iS1JGK8BKScQuKGRgR-i1E8lESprOJB7zbM&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=QtWBGdRxakoxw2fu2QD5Mw&oh=00_AfR6jWzC8ycqtIE_X5leQ60V-b0GgeGHCeg4kYLjk9hBqQ&oe=689AA974", hint: "event photography" }
         ], 
         span: "col-span-2"
     },
+    { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
+    { title: "DJ Set", images: [{ src: "https://placehold.co/600x600.png", hint: "dj music" }, { src: "https://placehold.co/600x600.png", hint: "dj party" }], span: "col-span-1" },
     { title: "Videoclipe", images: [{ src: "https://placehold.co/600x600.png", hint: "music video" }, { src: "https://placehold.co/600x600.png", hint: "singer" }], span: "col-span-1" },
     { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
