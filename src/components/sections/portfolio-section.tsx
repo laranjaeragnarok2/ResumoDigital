@@ -58,12 +58,20 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-2"
     },
-    { title: "Ritmos do Cerrado", images: [{ src: "https://placehold.co/800x600.png", hint: "savanna music" }, { src: "https://placehold.co/800x600.png", hint: "brazilian landscape" }], span: "col-span-1" },
+    { 
+        title: "Clipe Musical - Cidade", 
+        images: [
+            { src: "https://previews.dropbox.com/p/thumb/ACvh4BlKDqFrfFnzXSGgkUCI8nNRR07RmdTFKPRcs6WgfMMTES9HTfJ31KmBeWV0jy9QdVXeNqCrV12t0k-Mjn7hZpv41_Wf2_G2646Fm2eDeSpu7-p-Ka27tJ3Np-tSoIF83Mdlp9DSl1hijtt0I2D__vNiG3wg5R5Jc01p2idOUzA6H3ZKePml3r1qxCddSdram6l0Y3w-osPxgtKOFQkNa5lyya79e9xpUU2VbXltap4CC15VbOzM12O3EN7ygKuFoBQzfAOTkvyThelUnucTJomKrrHhE7GEpvY3pfqVCDr_zqMIT0Pzwehy1zJeoULoOGhkLNTihK_wUWtrpO1V/p.png?is_prewarmed=true", hint: "music video city" }, 
+            { src: "https://previews.dropbox.com/p/thumb/ACs8hB8KrB4f6hAMh3bSjWyrXwVGPv_R-sYxGwMPjvv6VQRv-mkzOgta6w8qFhtVuLF32EIfCm4xrUo5WhFXjUaNJ-tHS1yP3XykEL7KQPUuk5iJtPUcjRklw1xSY1tKCR9LiHE2dOSfKw9OxJsvmq_MV4w06rMoWwRoXY_-U9Rtg4GfelX0IX5ag3uv-P6hBe9CQyIDW7Pb3w4a7-Ffh5MLvS40GFKvGYalrSbsJq6uYFL8rl3FnunVgWwpmOoVaBHtGyqn5HvCmKHpn8UDXfD6E3m0x28tANIhhVNH7coohKjo3oymZ7drGO0uhwLzRLw/p.png", hint: "urban music video" },
+            { src: "https://previews.dropbox.com/p/thumb/ACtFkkGkMReLYreoQ6ZJmzC_QE2LwYl0hm58cWSH2Yv-CDh0GhJmAwEl9wx8DMZW6Fqh0TZz63wK4bsk7d6ulIPhhcieOeTx9BEQIGC-bmo3TEY0Cg5tO6hR2p3Ak369z0uCIbM2aSJco7WSOdEK4sth-59i3_as2KhEm1ZNjbYgtjL2umuit94xTblYMxH5nk9K8A1p9v_syhiDSy95M1cdTie_JtWgAni7AkeHf6cS5T0DZFuPhm8wuvk5jPOgeQ6S1GCfQTUKKKNzwjCNa2nj1YujbXKzno6CyxQ736IQg5SBTKqX2Zuh2qUsclrYy2A/p.png", hint: "singer city scape" }
+        ], 
+        span: "col-span-1" 
+    },
     { 
         title: "Custom DarkLettering Vinil", 
         images: [
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492360556_10212567868429801_7160581523740932131_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFdeHPlAdzsYNb7RnGpjX1tXq7Co6h1F-1ersKjqHUX7YGt90Ds580qw33ai07f4fI&_nc_ohc=d2vaDxVZ7aAQ7kNvwGhcgdA&_nc_oc=AdnfaY8m9qZTYCJUlBlLtsr-hC0dDBcgjgsZ6rmBFn8B61cPQPXR8gXk2sMdHdy3zSI&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=Lm5hCc2ql9MV7iYF-Ae8aQ&oh=00_AfR6MUx-NbBoMJzELXdZWJ8nSjAMwccx6GMBlckvUIqANw&oe=68791F0B", hint: "custom lettering" }, 
-            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492516300_10212567869189820_7135244700239007909_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHqumprjG2YtEK-gGyd037n4Bv6mHKb5eXgG_qYcpvl5VKcfTeWh3WWVQwKYsAFEss&_nc_ohc=Z7WqXcyjgqgQ7kNvwGl6hUv&_nc_oc=AdkLNuwScTHFK-TsaIs-7Fi7GUYRdFZMZB91HJ8qvKrClGvw-PrZ3fr6amG8nKFzTqs&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=9LCKIQQauajK7wDu9A58COw&oh=00_AfSl5Kd4ehsvtQyBNq81Gf1gJmi6tx2apNX1Pd5oWg-Ajg&oe=68791948", hint: "vinyl sticker" },
+            { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492516300_10212567869189820_7135244700239007909_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHqumprjG2YtEK-gGyd037n4Bv6mHKb5eXgG_qYcpvl5VKcfTeWh3WWVQwKYsAFEss&_nc_ohc=Z7WqXcyjgqgQ7kNvwGl6hUv&_nc_oc=AdkLNuwScTHFK-TsaIs-7Fi7GUYRdFZMZB91HJ8qvKrClGvw-PrZ3fr6amG8nKFzTqs&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=9LCKIQauajK7wDu9A58COw&oh=00_AfSl5Kd4ehsvtQyBNq81Gf1gJmi6tx2apNX1Pd5oWg-Ajg&oe=68791948", hint: "vinyl sticker" },
             { src: "https://scontent-bsb1-1.xx.fbcdn.net/v/t39.30808-6/492527251_10212567867989790_4339247791101849919_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGoanRyLz38rVveBOq5FGp5Co6YaRCNbPgKjphpEI1s-FbZHAZmpF0Pi-2bXW1ZGMU&_nc_ohc=C8nzB2DjhJcQ7kNvwEiEz0R&_nc_oc=AdlLQh_3e-zll-l_4Aw_b7fzF5Z8L4YS5O4cld38C_Sjhw2skE2qZa5EnFsDj7p9f64&_nc_zt=23&_nc_ht=scontent-bsb1-1.xx&_nc_gid=bofnQIPgG_jbCiMkDtzTvw&oh=00_AfSVr_TsCufx_KDBBDx-OtLUN5MbviDo0UMO6vM_yWFrsw&oe=68792409", hint: "dark lettering car" }
         ], 
         span: "col-span-1" 

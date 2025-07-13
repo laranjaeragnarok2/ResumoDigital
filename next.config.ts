@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
         hostname: 'scontent-bsb1-1.xx.fbcdn.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'previews.dropbox.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
