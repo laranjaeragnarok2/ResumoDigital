@@ -6,6 +6,7 @@ import SkillsSection from "@/components/sections/skills-section";
 import ExperienceSection from "@/components/sections/experience-section";
 import PortfolioSection, { type Project } from "@/components/sections/portfolio-section";
 import VideoSection, { type VideoProject } from "@/components/sections/video-section";
+import FooterSection from './sections/footer-section';
 
 
 interface PortfolioPageProps {
@@ -23,6 +24,7 @@ export default function PortfolioPage({ techProjects, videoProjects }: Portfolio
             <ExperienceSection />
             <PortfolioSection techProjects={techProjects} />
             <VideoSection projects={videoProjects} />
+            <FooterSection />
         </main>
     );
 }
