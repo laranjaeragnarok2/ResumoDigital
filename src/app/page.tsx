@@ -6,7 +6,7 @@ const techProjects: Project[] = [
     {
         title: "Legado da Ponte de Pedra (Site and Short-film)",
         description: "Este é o repositório oficial do projeto \"Legado da Ponte de Pedra\". Mais do que um site, é uma plataforma de conscientização e mobilização para a preservação de um dos mais importantes patrimônios geológicos, arqueológicos e culturais de Goiás, localizado na divisa entre Rio Verde e Paraúna.",
-        image: "https://placehold.co/800x600.png",
+        image: "https://camo.githubusercontent.com/46bbefc1f593e73f2fc424f03875642b2d6ef5ec4cdcfeebdf328b52b15801ba/68747470733a2f2f692e706f7374696d672e63632f78546758784377502f33646132346535663661633466313838373764303836383832653830632e6a7067",
         hint: "bridge stone",
         link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
         tags: ["Next.js", "TypeScript", "Vercel"],
