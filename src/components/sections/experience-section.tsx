@@ -20,7 +20,7 @@ const experiences = [
 export default function ExperienceSection() {
     return (
         <section id="experiencia" className="container mx-auto px-4 py-16 sm:py-24">
-            <h2 className="text-3xl font-bold tracking-tight text-center mb-2 font-headline">Jornada Profissional</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-center mb-2 font-headline">Posições de Destaque</h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">Minha trajetória une tecnologia, design e gestão para entregar resultados de impacto.</p>
             
             <div className="relative max-w-3xl mx-auto">
