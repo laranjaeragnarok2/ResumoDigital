@@ -1,46 +1,42 @@
+import { CheckCircle } from "lucide-react";
 
 const skills = {
     "Frontend": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Next.js"],
-    "Styling": ["Tailwind CSS", "Shadcn/UI", "Bootstrap", "CSS-in-JS"],
+    "Estilização": ["Tailwind CSS", "Shadcn/UI", "Bootstrap", "CSS-in-JS"],
     "Backend": ["Node.js", "Medusa.js", "PHP", "Java", "Wordpress"],
-    "Databases": ["PostgreSQL", "MySQL", "Firebase"],
-    "DevOpsCloud": ["Git", "GitHub", "Vercel", "Firebase Hosting", "AWS", "Google Cloud"],
-    "Mobile": ["Kotlin", "Swift 5.3", "Android Studio", "System Optimization"],
+    "Bancos de Dados": ["PostgreSQL", "MySQL", "Firebase"],
+    "DevOps & Cloud": ["Git", "GitHub", "Vercel", "Firebase Hosting", "AWS", "Google Cloud"],
+    "Mobile": ["Kotlin", "Swift 5.3", "Android Studio", "Otimização de Sistemas"],
     "Software": ["Adobe Suite", "Office Suite", "Figma", "Adobe XD", "VS Code", "Capcut", "OBS"],
-    "Leadership": ["Project Leadership", "Team Management", "Project Lifecycle"],
-    "Marketing": ["Marketing Analysis (Google)", "SEO", "Google Ads", "Meta Ads", "Sales Funnel"],
-    "Production": ["Cultural Production", "ESG Project Strategy"],
-    "Creative": ["Art Direction", "Storytelling", "Typography", "Pro Photography", "Video Production", "UI/UX", "Graphic Design"],
-    "UrbanArt": ["PIXO", "Graffiti", "Rap", "DJing"]
+    "Liderança": ["Liderança de Projetos", "Gestão de Equipes", "Ciclo de Vida de Projetos"],
+    "Marketing": ["Análise de Marketing (Google)", "SEO", "Google Ads", "Meta Ads", "Funil de Vendas"],
+    "Produção": ["Produção Cultural", "Estratégia de Projetos ESG"],
+    "Criativo": ["Direção de Arte", "Storytelling", "Tipografia", "Fotografia Profissional", "Produção de Vídeo", "UI/UX", "Design Gráfico"],
+    "Arte Urbana": ["PIXO", "Graffiti", "Rap", "DJing"]
 };
-
-const Syntax = ({ color, children }: { color: string, children: React.ReactNode }) => (
-    <span className={color}>{children}</span>
-);
 
 export default function SkillsSection() {
     return (
-        <pre className="text-sm md:text-base whitespace-pre-wrap">
-            <code>
-                <span className="text-muted-foreground">// Technical & Creative Competencies</span>
-                {`\n\n`}
-                <Syntax color="text-chart-5">export const</Syntax> <Syntax color="text-chart-1">skills</Syntax> = {'{'}{`\n`}
-                {Object.entries(skills).map(([category, items]) => (
-                     <div key={category} className="ml-4">
-                        <Syntax color="text-chart-2">{category}</Syntax>: [{`\n`}
-                        <div className="ml-4 flex flex-wrap gap-x-4 gap-y-1">
-                            {items.map((skill, index) => (
-                                <span key={skill}>
-                                    <Syntax color="text-chart-3">{`'${skill}'`}</Syntax>
-                                    {index < items.length - 1 ? ',' : ''}
-                                </span>
-                            ))}
+        <section id="habilidades" className="bg-card py-16 sm:py-24">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold tracking-tight text-center mb-2 font-headline">Caixa de Ferramentas</h2>
+                <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">Um conjunto de habilidades multidisciplinares para transformar ideias em realidade.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10">
+                    {Object.entries(skills).map(([category, items]) => (
+                        <div key={category}>
+                            <h3 className="text-lg font-semibold mb-4 text-primary">{category}</h3>
+                            <ul className="space-y-3">
+                                {items.map((skill) => (
+                                    <li key={skill} className="flex items-center">
+                                        <CheckCircle className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
+                                        <span className="text-muted-foreground">{skill}</span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        {`],`}{`\n`}
-                    </div>
-                ))}
-                {'}'};
-            </code>
-        </pre>
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 }

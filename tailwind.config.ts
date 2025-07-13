@@ -16,10 +16,15 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        'grid-pattern': "radial-gradient(circle, hsl(var(--border) / 0.5) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        'grid-pattern': "2rem 2rem",
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['"Source Code Pro"', 'monospace'],
+        headline: ['Archivo', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

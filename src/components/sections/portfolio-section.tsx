@@ -1,14 +1,14 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Film, Code } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-const portfolioItems = [
+const techProjects = [
     {
         title: "Legado da Ponte de Pedra",
-        description: "Landing page for the short film 'Legado da Ponte de Pedra', a socio-environmental project focused on preserving Goiás' historical and geological heritage.",
+        description: "Landing page para o curta-metragem 'Legado da Ponte de Pedra', um projeto socioambiental focado na preservação do patrimônio histórico e geológico de Goiás.",
         image: "https://placehold.co/800x600.png",
         hint: "bridge nature",
         link: "https://github.com/laranjaeragnarok2/ponte-de-pedra",
@@ -17,7 +17,7 @@ const portfolioItems = [
     },
     {
         title: "Medusa Store (E-commerce)",
-        description: "Headless e-commerce backend using Medusa.js, including a landing page and full structure for products, orders, and customers.",
+        description: "Backend de e-commerce headless usando Medusa.js, incluindo landing page e estrutura completa para produtos, pedidos e clientes.",
         image: "https://placehold.co/600x800.png",
         hint: "ecommerce code",
         link: "https://github.com/laranjaeragnarok2/medusa-store",
@@ -25,83 +25,111 @@ const portfolioItems = [
         className: "md:row-span-2"
     },
     {
-        title: "JWildfire (Generative Art)",
-        description: "Contribution to a multi-platform software for creating generative art and fractals, merging code with artistic creation.",
+        title: "JWildfire (Arte Generativa)",
+        description: "Contribuição para um software multiplataforma de criação de arte generativa e fractais, unindo código e criação artística.",
         image: "https://placehold.co/600x600.png",
         hint: "fractal art",
         link: "https://github.com/laranjaeragnarok2/j-wildfire-8.50",
-        tags: ["Java", "Cuda", "Generative Art"],
-        className: ""
-    },
-    {
-        title: "Urban Canvas",
-        description: "A photo series documenting the vibrant graffiti and street art scene in Rio Verde.",
-        image: "https://placehold.co/600x600.png",
-        hint: "graffiti wall",
-        tags: ["Photography", "Urban Art"],
-        className: ""
-    },
-    {
-        title: "Cerrado Rhythms",
-        description: "Short film exploring the intersection of traditional music and modern life in the Cerrado.",
-        image: "https://placehold.co/800x600.png",
-        hint: "film music",
-        tags: ["Directing", "Video Editing"],
-        className: "md:col-span-2"
-    },
-     {
-        title: "DJ Set - Cultura na Praça",
-        description: "Live DJ performance at a local cultural event, mixing Brazilian beats with electronic music.",
-        image: "https://placehold.co/600x600.png",
-        hint: "dj music",
-        tags: ["DJing", "Live Performance"],
+        tags: ["Java", "Cuda", "Arte Generativa"],
         className: ""
     },
 ];
 
+const audiovisualProjects = [
+    {
+        title: "Telas Urbanas",
+        description: "Série fotográfica que documenta a vibrante cena de graffiti e arte de rua em Rio Verde.",
+        image: "https://placehold.co/600x600.png",
+        hint: "graffiti wall",
+        tags: ["Fotografia", "Arte Urbana"],
+        className: ""
+    },
+    {
+        title: "Ritmos do Cerrado",
+        description: "Curta-metragem que explora a intersecção da música tradicional com a vida moderna no Cerrado.",
+        image: "https://placehold.co/800x600.png",
+        hint: "film music",
+        tags: ["Direção", "Edição de Vídeo"],
+        className: "md:col-span-2"
+    },
+     {
+        title: "DJ Set - Cultura na Praça",
+        description: "Performance de DJ ao vivo em evento cultural local, misturando batidas brasileiras com música eletrônica.",
+        image: "https://placehold.co/600x600.png",
+        hint: "dj music",
+        tags: ["DJing", "Performance Ao Vivo"],
+        className: ""
+    },
+];
+
+const SectionTitle = ({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) => (
+    <div className="text-center mb-12">
+        <Icon className="mx-auto h-12 w-12 text-primary mb-4" />
+        <h2 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            {title}
+        </h2>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">{description}</p>
+    </div>
+);
+
+const ProjectGrid = ({ projects }: { projects: typeof techProjects }) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[28rem]">
+        {projects.map((item, index) => (
+            <Card key={index} className={`bg-card group overflow-hidden flex flex-col border-2 border-transparent hover:border-primary transition-all duration-300 ${item.className}`}>
+                <div className="relative overflow-hidden h-1/2">
+                    <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        data-ai-hint={item.hint}
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                </div>
+                <div className="flex flex-col justify-between flex-1 p-6">
+                    <div>
+                        <CardTitle className="mb-2">{item.title}</CardTitle>
+                        <CardDescription>{item.description}</CardDescription>
+                    </div>
+                    <CardFooter className="p-0 pt-4 flex justify-between items-center">
+                        <div className="flex flex-wrap gap-2">
+                            {item.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                        </div>
+                        {item.link && (
+                            <Button asChild variant="ghost" size="sm">
+                                <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                                    Ver <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        )}
+                    </CardFooter>
+                </div>
+            </Card>
+        ))}
+    </div>
+);
+
 export default function PortfolioSection() {
     return (
-        <section className="bg-background py-16 sm:py-24">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl" style={{color: 'hsl(var(--accent))'}}>
-                        Digital Canvas
-                    </h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">A selection of my work in development and audiovisual arts.</p>
+        <section id="portfolio" className="py-16 sm:py-24 space-y-24">
+            <div className="bg-background">
+                <div className="container mx-auto px-4">
+                    <SectionTitle 
+                        icon={Code}
+                        title="Canvas Digital"
+                        description="Uma seleção de meus trabalhos em desenvolvimento e tecnologia."
+                    />
+                    <ProjectGrid projects={techProjects} />
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[28rem]">
-                    {portfolioItems.map((item, index) => (
-                        <Card key={index} className={`bg-card group overflow-hidden flex flex-col ${item.className}`}>
-                            <div className="relative overflow-hidden h-1/2">
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    fill
-                                    data-ai-hint={item.hint}
-                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="flex flex-col justify-between flex-1">
-                                <CardHeader>
-                                    <CardTitle>{item.title}</CardTitle>
-                                    <CardDescription>{item.description}</CardDescription>
-                                </CardHeader>
-                                <CardFooter className="flex justify-between items-center">
-                                    <div className="flex flex-wrap gap-x-2 gap-y-1">
-                                        {item.tags.map(tag => <span key={tag} className="text-xs font-semibold" style={{color: 'hsl(var(--accent))'}}>{tag}</span>)}
-                                    </div>
-                                    {item.link && (
-                                        <Button asChild variant="ghost" size="sm">
-                                            <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                                                View <ArrowRight className="ml-2 h-4 w-4" />
-                                            </Link>
-                                        </Button>
-                                    )}
-                                </CardFooter>
-                            </div>
-                        </Card>
-                    ))}
+            </div>
+            <div className="bg-card">
+                 <div className="container mx-auto px-4 py-16 sm:py-24">
+                    <SectionTitle 
+                        icon={Film}
+                        title="Lente Criativa"
+                        description="Explorações no mundo do audiovisual, da fotografia à produção de filmes."
+                    />
+                    <ProjectGrid projects={audiovisualProjects} />
                 </div>
             </div>
         </section>
