@@ -115,7 +115,7 @@ export default async function Home() {
             let summary = project.description;
             try {
                 const readmeContent = await getReadmeContent(project.link);
-                if (readmeContent) {
+                if (readmeContent) { // Check if readmeContent is not null or empty
                     summary = await summarizeReadme(readmeContent);
                 }
             } catch (error) {
