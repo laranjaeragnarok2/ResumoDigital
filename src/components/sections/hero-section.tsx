@@ -9,7 +9,7 @@ export default function HeroSection() {
             className="relative min-h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden"
         >
             <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-[subtle-zoom_20s_ease-in-out_infinite_alternate]"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-[ken-burns_25s_ease-in-out_infinite_alternate]"
                 style={{ backgroundImage: 'url(https://i.ibb.co/RTBFm7Hn/envato-labs-image-edit-1.png)' }}
             />
             <div className="absolute inset-0 bg-background/70 backdrop-blur-sm z-0"></div>
