@@ -59,7 +59,7 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-2"
     },
     { 
-        title: "Clipe Musical - Cidade", 
+        title: "Clipe Musical - Cidade (Dropbox)", 
         images: [
             { src: "https://previews.dropbox.com/p/thumb/ACvh4BlKDqFrfFnzXSGgkUCI8nNRR07RmdTFKPRcs6WgfMMTES9HTfJ31KmBeWV0jy9QdVXeNqCrV12t0k-Mjn7hZpv41_Wf2_G2646Fm2eDeSpu7-p-Ka27tJ3Np-tSoIF83Mdlp9DSl1hijtt0I2D__vNiG3wg5R5Jc01p2idOUzA6H3ZKePml3r1qxCddSdram6l0Y3w-osPxgtKOFQkNa5lyya79e9xpUU2VbXltap4CC15VbOzM12O3EN7ygKuFoBQzfAOTkvyThelUnucTJomKrrHhE7GEpvY3pfqVCDr_zqMIT0Pzwehy1zJeoULoOGhkLNTihK_wUWtrpO1V/p.png?is_prewarmed=true", hint: "music video city" }, 
             { src: "https://previews.dropbox.com/p/thumb/ACs8hB8KrB4f6hAMh3bSjWyrXwVGPv_R-sYxGwMPjvv6VQRv-mkzOgta6w8qFhtVuLF32EIfCm4xrUo5WhFXjUaNJ-tHS1yP3XykEL7KQPUuk5iJtPUcjRklw1xSY1tKCR9LiHE2dOSfKw9OxJsvmq_MV4w06rMoWwRoXY_-U9Rtg4GfelX0IX5ag3uv-P6hBe9CQyIDW7Pb3w4a7-Ffh5MLvS40GFKvGYalrSbsJq6uYFL8rl3FnunVgWwpmOoVaBHtGyqn5HvCmKHpn8UDXfD6E3m0x28tANIhhVNH7coohKjo3oymZ7drGO0uhwLzRLw/p.png", hint: "urban music video" },
@@ -85,7 +85,15 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-1" 
     },
-    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
+    { 
+        title: "Feira Cultural", 
+        images: [
+            { src: "https://i.imgur.com/d06L9e7.jpeg", hint: "cultural fair" }, 
+            { src: "https://i.imgur.com/ODs5LcV.jpeg", hint: "event production" },
+            { src: "https://i.imgur.com/UgLz4Zo.jpeg", hint: "event photography" }
+        ], 
+        span: "col-span-1"
+    },
     { title: "Arte Generativa", images: [{ src: "https://placehold.co/600x600.png", hint: "generative art" }, { src: "https://placehold.co/600x600.png", hint: "abstract design" }], span: "col-span-1" },
     { 
         title: "Apresentações Musicais", 
@@ -97,15 +105,7 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-1" 
     },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
-    { 
-        title: "Feira Cultural", 
-        images: [
-            { src: "https://i.imgur.com/d06L9e7.jpeg", hint: "cultural fair" }, 
-            { src: "https://i.imgur.com/ODs5LcV.jpeg", hint: "event production" },
-            { src: "https://i.imgur.com/UgLz4Zo.jpeg", hint: "event photography" }
-        ], 
-        span: "col-span-1"
-    },
+    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
 ];
 
 
@@ -177,7 +177,7 @@ const MosaicCellContent = ({ project }: { project: AudiovisualProject }) => {
     useEffect(() => {
         stopInterval();
         if (project.images.length > 1) {
-            const randomDelay = Math.random() * 4000 + 2000; // 2-6 seconds
+            const randomDelay = Math.random() * 4000 + 3000; // 3-7 seconds
             intervalRef.current = setInterval(() => {
                 setCurrentIndex(prev => (prev + 1) % project.images.length);
             }, randomDelay);
