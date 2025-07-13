@@ -6,9 +6,12 @@ export default function HeroSection() {
     return (
         <section 
             id="inicio" 
-            className="relative min-h-screen flex flex-col items-center justify-center text-center p-4 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(https://i.ibb.co/RTBFm7Hn/envato-labs-image-edit-1.png)' }}
+            className="relative min-h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden"
         >
+            <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-[subtle-zoom_20s_ease-in-out_infinite_alternate]"
+                style={{ backgroundImage: 'url(https://i.ibb.co/RTBFm7Hn/envato-labs-image-edit-1.png)' }}
+            />
             <div className="absolute inset-0 bg-background/70 backdrop-blur-sm z-0"></div>
             <div className="relative z-10 max-w-4xl mx-auto">
                 <div className="mb-4">

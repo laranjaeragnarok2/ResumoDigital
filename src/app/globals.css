@@ -76,3 +76,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes subtle-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
