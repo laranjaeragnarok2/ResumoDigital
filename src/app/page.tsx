@@ -17,7 +17,7 @@ const techProjects: Project[] = [
     {
         title: "Medusa Store (E-commerce Headless)",
         description: "Landing page para e-commerce com lista de espera via Formspree, notificações por e-mail, painel de controle, design responsivo com tema escuro e botões flutuantes para contato direto.",
-        image: "https://camo.githubusercontent.com/06ac02cad9cb9612893be054d5c486eaa4b44f2b0a086ab9f5f23075d4c44aee/68747470733a2f2f692e706f7374696d672e63632f4a373644684a475a2f73637265656e636170747572652d6d65647573612d73746f72652d73686f702d323032352d30362d32352d31352d34332d31362e706e67",
+        image: "https://camo.githubusercontent.com/06ac02cad9cb9612893be054d5c486eaa4b44f2b0a086ab9f5f23075d4c44aee/68747470733a2f2f692e706f7374696d672e63632f4a373644684a475a2f73637265656e636170747572652d6d65647573612d73746f72652d736f702d323032352d30362d32352d31352d34332d31362e706e67",
         hint: "medusa store",
         link: "https://github.com/laranjaeragnarok2/medusa-store",
         tags: ["Medusa.js", "Next.js", "PostgreSQL"],
@@ -33,12 +33,12 @@ const techProjects: Project[] = [
         className: ""
     },
     {
-        title: "Novo Projeto 1",
-        description: "Descrição do novo projeto 1. Pode me fornecer os detalhes para que eu possa preencher aqui.",
+        title: "HoryuAI",
+        description: "HoryuAI é um bot para Discord com integração à API Gemini para gerar conteúdo dinâmico. Ele foi desenvolvido para trazer recomendações de filmes, gerar imagens a partir de prompts e auxiliar com comandos administrativos como kick e ban, além de enviar notícias semanais (news) de forma automatizada.",
         image: "https://placehold.co/800x600.png",
-        hint: "tech code",
-        link: "https://github.com/laranjaeragnarok2",
-        tags: ["React", "Node.js"],
+        hint: "discord bot ai",
+        link: "https://github.com/laranjaeragnarok2/HoryuAI",
+        tags: ["Python", "Discord.py", "Gemini API"],
         className: ""
     },
     {
