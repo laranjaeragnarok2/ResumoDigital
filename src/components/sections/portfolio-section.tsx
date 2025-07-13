@@ -135,7 +135,7 @@ export default function PortfolioSection({ techProjects }: PortfolioSectionProps
                     <SectionTitle 
                         icon={Code}
                         title="Canvas Digital"
-                        description="Uma seleção de meus trabalhos em desenvolvimento e tecnologia."
+                        description="Uma seleção de meus trabalhos mais recentes e relevantes em desenvolvimento e tecnologia."
                     />
                     <ProjectGrid projects={visibleProjects} variant="tech" />
                     <div className="text-center mt-12">
