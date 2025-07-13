@@ -121,8 +121,15 @@ const audiovisualProjects: AudiovisualProject[] = [
         ], 
         span: "col-span-1" 
     },
-    { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
-    { title: "Curta Metragem", images: [{ src: "https://placehold.co/600x800.png", hint: "short film" }, { src: "https://placehold.co/600x800.png", hint: "movie scene" }], span: "" },
+    { 
+        title: "Moon Effect", 
+        images: [
+            { src: "https://i.postimg.cc/52tFt9mM/IMG-6140.jpg", hint: "moon effect" }, 
+            { src: "https://i.postimg.cc/nc2DZ9Bk/IMG-6010-2.jpg", hint: "light flare" },
+            { src: "https://i.postimg.cc/h49my5GN/IMG-5944.jpg", hint: "abstract light" }
+        ], 
+        span: "col-span-1" 
+    },
 ];
 
 
