@@ -60,9 +60,9 @@ const videoProjects: VideoProject[] = [
         youtubeId: "eMHWmiX3nFo"
     },
     {
-        title: "Videoclipe Exemplo 2",
-        description: "Outra descrição para um trabalho audiovisual.",
-        youtubeId: "L_LUpnjgPso"
+        title: "PAS.SA.DO",
+        description: "1- Tempo Precedente: O período de tempo que ocorreu antes do presente momento. Ficha Técnica: beat: HORYU, shot: HORYU, edição: AQUINO, produção: AQUINO. sentinelas 2024",
+        youtubeId: "Yu-46-_aAZ0"
     }
 ];
 
