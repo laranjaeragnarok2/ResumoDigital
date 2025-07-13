@@ -50,11 +50,11 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-1" 
     },
     { 
-        title: "Feira Cultural", 
+        title: "Clipe Musical - Cidade", 
         images: [
-            { src: "https://i.imgur.com/d06L9e7.jpeg", hint: "cultural fair" }, 
-            { src: "https://i.imgur.com/ODs5LcV.jpeg", hint: "event production" },
-            { src: "https://i.imgur.com/UgLz4Zo.jpeg", hint: "event photography" }
+            { src: "https://i.imgur.com/lRwvrIP.jpeg", hint: "music video city" }, 
+            { src: "https://i.imgur.com/CFnCyBb.jpeg", hint: "urban music video" },
+            { src: "https://i.imgur.com/dcszmaD.jpeg", hint: "singer city scape" }
         ], 
         span: "col-span-2"
     },
@@ -97,7 +97,15 @@ const audiovisualProjects: AudiovisualProject[] = [
         span: "col-span-1" 
     },
     { title: "Animação 2D", images: [{ src: "https://placehold.co/600x600.png", hint: "2d animation" }, { src: "https://placehold.co/600x600.png", hint: "cartoon character" }], span: "col-span-1" },
-    { title: "Animação 3D", images: [{ src: "https://placehold.co/600x600.png", hint: "3d animation" }, { src: "https://placehold.co/600x600.png", hint: "cgi character" }], span: "col-span-1" },
+    { 
+        title: "Feira Cultural", 
+        images: [
+            { src: "https://i.imgur.com/d06L9e7.jpeg", hint: "cultural fair" }, 
+            { src: "https://i.imgur.com/ODs5LcV.jpeg", hint: "event production" },
+            { src: "https://i.imgur.com/UgLz4Zo.jpeg", hint: "event photography" }
+        ], 
+        span: "col-span-1"
+    },
 ];
 
 
