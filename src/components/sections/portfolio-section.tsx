@@ -136,7 +136,7 @@ export default function PortfolioSection() {
                     <SectionTitle 
                         icon={Film}
                         title="Lente Criativa"
-                        description="Explorações no mundo do audiovisual, da fotografia à produção de filmes."
+                        description="Explorações no mundo do audiovisual, da fotografia à produção de experiências"
                     />
                     <ProjectGrid projects={audiovisualProjects} variant="art" />
                 </div>
